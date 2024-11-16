@@ -5,15 +5,14 @@ permalink: /
 title: "Editsplat: Multi-View Fusion and Attention-Guided Optimization for View-Consistent 3D Scene Editing with 3D Gaussian Splatting"
 authors: Anonymous CVPR submission
 affiliations:
-    CVPR 2025
+     <strong> Paper ID 10124 </strong>
 paper: ""
 video: ""
 code: ""
 data: ""
 ---
-
 <!-- Teaser Image -->
-<figure style="margin: 0 0 50px; padding: 0;"> 
+<figure style="margin: 0 0 60px; padding: 0;"> 
     <img src="teaser.jpg" alt="Teaser" style="width: 100%; height: auto;" />
     <figcaption style="margin-top: 10px; text-align: center;">
         Figure 1: Teaser Image for Editsplat Framework.
