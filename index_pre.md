@@ -13,12 +13,20 @@ data: ""
 ---
 
 <!-- Teaser Image -->
-<figure style="margin: 0 0 0; padding: 0;"> 
-    <img src="teaser.jpg" alt="Teaser" style="width: 100%; height: auto;" />
-    <figcaption style="margin-top: 5px; text-align: center;">
-        Figure 1: Teaser Image for Editsplat Framework.
-    </figcaption>
-</figure>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <img src="teaser.jpg" alt="Teaser" style="width: 100%; height: auto;" />
+        <figcaption style="margin-top: 5px; text-align: center;">
+            Figure 1: Teaser Image for Editsplat Framework.
+        </figcaption>
+        <h2 class="subtitle has-text-centered">
+        <span class="dnerf">EditSplat</span> . demonstrates its capability for flexible and high-quality 3D scene editing 
+      </h2>
+    </div>
+  </div>
+</section>
 
 <!-- Abstract Section -->
 <div class="columns is-centered has-text-centered" style="width: 100%; margin:100px 0 0;">
