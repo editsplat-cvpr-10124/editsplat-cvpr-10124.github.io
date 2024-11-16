@@ -5,11 +5,11 @@ permalink: /
 title: "Editsplat: Multi-View Fusion and Attention-Guided Optimization for View-Consistent 3D Scene Editing with 3D Gaussian Splatting"
 authors: Anonymous CVPR admission
 affiliations:
-  - "King's College, Cambridge"
-paper: "https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf"
-video: "https://www.youtube.com/results?search_query=turing+machine"
-code: "https://github.com/topics/turing-machines"
-data: "https://huggingface.co/docs/datasets"
+  - 
+# paper: "https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf"
+# video: "https://www.youtube.com/results?search_query=turing+machine"
+# code: "https://github.com/topics/turing-machines"
+# data: "https://huggingface.co/docs/datasets"
 ---
 
 <!-- Using HTML to center the abstract -->
