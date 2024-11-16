@@ -2,7 +2,7 @@
 layout: project_page
 permalink: /
 
-title: "Editsplat: Multi-View Fusion and Attention-Guided Optimization for View-Consistent 3D Scene Editing with 3D Gaussian Splatting"
+title: "EditSplat: Multi-View Fusion and Attention-Guided Optimization for View-Consistent 3D Scene Editing with 3D Gaussian Splatting"
 authors: Anonymous CVPR submission
 affiliations:
      <strong> Paper ID 10124 </strong>
@@ -25,7 +25,7 @@ data: ""
         <h2> Abstract </h2>
         <div class="content has-text-justified">
             Recent advancements in 3D editing have highlighted the potential of text-driven methods in real-time, user-friendly AR/VR applications. However, current methods rely on 2D diffusion models without adequately considering multi-view information, resulting in multi-view inconsistency. While 3D Gaussian Splatting (3DGS) significantly improves rendering quality and speed, its 3D editing process encounters difficulties with inefficient optimization, as pre-trained Gaussians retain excessive source information, hindering optimization.
-            <br><br>
+            <br>
             To address these limitations, we propose <strong>EditSplat</strong>, a novel 3D editing framework that integrates Multi-view Fusion Guidance (MFG) and Attention-Guided Trimming (AGT). Our MFG ensures multi-view consistency by incorporating essential multi-view information into the diffusion process, leveraging classifier-free guidance from the text-to-image diffusion model and the geometric properties of 3DGS. Additionally, our AGT leverages the explicit representation of 3DGS to selectively prune and optimize 3D Gaussians, enhancing optimization efficiency and enabling precise, semantically rich local edits. Through extensive qualitative and quantitative evaluations, EditSplat achieves superior multi-view consistency and editing quality over existing methods, significantly enhancing overall efficiency.
         </div>
     </div>
@@ -38,8 +38,8 @@ data: ""
             <img src="Main_fig.jpg" alt="Editsplat Overview" style="width: 100%; height: auto;" />
             <figcaption style="margin-top: 10px; text-align: center;">
                 <strong>Editsplat Overview.</strong> EditSplat consists of two main methods: 
-                (1) Multi-view Fusion Guidance (MFG, Sec. 3.2), which aligns multi-view information with text prompts and source images to ensure multi-view consistency; 
-                (2) Attention-Guided Trimming (AGT, Sec. 3.3), which prunes pre-trained Gaussians for optimization efficiency and selectively optimizes Gaussians for semantic local editing.
+                (1) Multi-view Fusion Guidance (MFG), which aligns multi-view information with text prompts and source images to ensure multi-view consistency; <br>
+                (2) Attention-Guided Trimming (AGT), which prunes pre-trained Gaussians for optimization efficiency and selectively optimizes Gaussians for semantic local editing.
             </figcaption>
         </figure>
     </div>
