@@ -11,50 +11,58 @@ video: ""
 code: ""
 data: ""
 ---
+
 <!-- Teaser Image -->
-<figure style="margin: 0 0 60px; padding: 0;"> 
+<figure style="margin: 0 0 0; padding: 0;"> 
     <img src="teaser.jpg" alt="Teaser" style="width: 100%; height: auto;" />
-    <figcaption style="margin-top: 10px; text-align: center;">
+    <figcaption style="margin-top: 5px; text-align: center;">
         Figure 1: Teaser Image for Editsplat Framework.
     </figcaption>
 </figure>
 
 <!-- Abstract Section -->
-<div class="columns is-centered has-text-centered" style="width: 100%; margin: 0;">
+<div class="columns is-centered has-text-centered" style="width: 100%; margin:100px 0 0;">
     <div class="column" style="width: 100%; padding: 0;">
         <h2> Abstract </h2>
         <div class="content has-text-justified">
             Recent advancements in 3D editing have highlighted the potential of text-driven methods in real-time, user-friendly AR/VR applications. However, current methods rely on 2D diffusion models without adequately considering multi-view information, resulting in multi-view inconsistency. While 3D Gaussian Splatting (3DGS) significantly improves rendering quality and speed, its 3D editing process encounters difficulties with inefficient optimization, as pre-trained Gaussians retain excessive source information, hindering optimization.
-            <br>
-            To address these limitations, we propose <strong>EditSplat</strong>, a novel 3D editing framework that integrates Multi-view Fusion Guidance (MFG) and Attention-Guided Trimming (AGT). Our MFG ensures multi-view consistency by incorporating essential multi-view information into the diffusion process, leveraging classifier-free guidance from the text-to-image diffusion model and the geometric properties of 3DGS. Additionally, our AGT leverages the explicit representation of 3DGS to selectively prune and optimize 3D Gaussians, enhancing optimization efficiency and enabling precise, semantically rich local edits. Through extensive qualitative and quantitative evaluations, EditSplat achieves superior multi-view consistency and editing quality over existing methods, significantly enhancing overall efficiency.
+            <br> <br>
+            To address these limitations, we propose <strong> EditSplat </strong>, a novel 3D editing framework that integrates Multi-view Fusion Guidance (MFG) and Attention-Guided Trimming (AGT). Our MFG ensures multi-view consistency by incorporating essential multi-view information into the diffusion process, leveraging classifier-free guidance from the text-to-image diffusion model and the geometric properties of 3DGS. Additionally, our AGT leverages the explicit representation of 3DGS to selectively prune and optimize 3D Gaussians, enhancing optimization efficiency and enabling precise, semantically rich local edits. Through extensive qualitative and quantitative evaluations, EditSplat achieves superior multi-view consistency and editing quality over existing methods, significantly enhancing overall efficiency.
         </div>
     </div>
 </div>
 
 <!-- Main Figure Section -->
-<div class="columns" style="width: 100%; margin: 0;">
+<div class="columns" style="width: 100%; margin: 20 0 0;">
     <div class="column" style="width: 100%; padding: 0;">
         <figure style="margin: 50px 0 0; padding: 0;">
             <img src="Main_fig.jpg" alt="Editsplat Overview" style="width: 100%; height: auto;" />
-            <figcaption style="margin-top: 10px; text-align: center;">
-                <strong>Editsplat Overview.</strong> EditSplat consists of two main methods: 
-                (1) Multi-view Fusion Guidance (MFG), which aligns multi-view information with text prompts and source images to ensure multi-view consistency; <br>
-                (2) Attention-Guided Trimming (AGT), which prunes pre-trained Gaussians for optimization efficiency and selectively optimizes Gaussians for semantic local editing.
+            <figcaption style="margin-top: 10px;">
+                <strong> Editsplat Overview.</strong> EditSplat consists of two main methods: 
+                (1) Multi-view Fusion Guidance <strong>(MFG)</strong>, which aligns multi-view information with text prompts and source images to ensure multi-view consistency; 
+                (2) Attention-Guided Trimming<strong> (AGT)</strong>, which prunes pre-trained Gaussians for optimization efficiency and selectively optimizes Gaussians for semantic local editing.
             </figcaption>
         </figure>
     </div>
 </div>
 
 
+<!-- Rendering results Section -->
+<div class="columns is-centered has-text-centered" style="width: 100%; margin: 100px 0 50px;">
+    <div class="column" style="width: 100%; padding: 0;">
+        <h2> Experiment Results </h2>
+    </div>
+</div>
+
+
 <br><br>
-
-## Background
+<!-- ## Rendering Results -->
 The paper "On Computable Numbers, with an Application to the Entscheidungsproblem" was published by Alan Turing in 1936. In this groundbreaking paper, Turing introduced the concept of a universal computing machine, now known as the Turing machine.
-
+<br><br>
 ## Objective
 Turing's main objective in this paper was to investigate the notion of computability and its relation to the Entscheidungsproblem (the decision problem), which is concerned with determining whether a given mathematical statement is provable or not.
 
-
+<br><br>
 ## Key Ideas
 1. Turing first presented the concept of a "computable number," which refers to a number that can be computed by an algorithm or a definite step-by-step process.
 2. He introduced the notion of a Turing machine, an abstract computational device consisting of an infinite tape divided into cells and a read-write head. The machine can read and write symbols on the tape, move the head left or right, and transition between states based on a set of rules.
