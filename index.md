@@ -2,9 +2,9 @@
 layout: project_page
 permalink: /
 
-title: EditSplat: Multi-View Fusion and Attention-Guided Optimization for View-Consistent 3D Scene Editing with 3D Gaussian Splatting
+title: Editsplat: Multi-View Fusion and Attention-Guided Optimization for View-Consistent 3D Scene Editing with 3D Gaussian Splatting
 authors:
-    Anonymous CVPR submission
+    Anonymous CVPR admission
 affiliations:
     King's College, Cambridge
 paper: https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
