@@ -158,3 +158,20 @@ body {
 }
 
 
+/* 이미지를 가운데 정렬 */
+.centered-image {
+  display: block; /* 블록 요소로 변환 */
+  margin: 0 auto; /* 자동으로 좌우 가운데 정렬 */
+  width: 85%; /* 이미지 너비 조정 */
+  height: auto; /* 비율 유지 */
+}
+
+/* 캡션 스타일 */
+.custom-caption {
+  text-align: center; /* 가운데 정렬 */
+  font-style: italic; /* 기울임체 */
+  margin-top: 10px; /* 이미지와 캡션 간 간격 */
+  font-size: 0.9em; /* 글자 크기를 줄임 */
+  line-height: 1.4; /* 줄 간격 */
+  color: #555; /* 텍스트 색상 */
+}
