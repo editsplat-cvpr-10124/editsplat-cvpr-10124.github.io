@@ -118,7 +118,7 @@
       <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0px 0 0;">
         <div class="column" style="width: 80%; padding: 0;">
             <h2 class="title is-3"> Overview </h2> 
-        <img src="Main_fig.jpg" alt="Teaser" style="width: 100%; height: auto;" />
+        <img src="Main_fig_1115_fin-1.png" alt="Teaser" style="width: 100%; height: auto;" />
         <figcaption style="text-align: center; font-style: italic; margin-top: 10px;">
           <strong> Editsplat Overview.</strong> EditSplat consists of two main methods: 
           (1) Multi-view Fusion Guidance <strong>(MFG)</strong>, which aligns multi-view information with text prompts and source images to ensure multi-view consistency; 
@@ -873,151 +873,6 @@ figcaption {
 
 
 
-<br>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Comparison</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-    }
-
-    #video-compare-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      aspect-ratio: 16 / 9; /* 비디오 비율 유지 */
-      margin: 20px auto;
-      overflow: hidden;
-    }
-
-    /* 두 비디오 공통 스타일 */
-    #video-compare-container > video,
-    #video-clipper video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* 비율 유지하면서 잘림 방지 */
-    }
-
-    /* 클리핑된 비디오 */
-    #video-clipper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 50%; /* 초기 슬라이더 위치 */
-      height: 100%;
-      overflow: hidden;
-      z-index: 2; /* 오른쪽 비디오가 위로 올라오도록 설정 */
-    }
-
-    /* 슬라이더 스타일 */
-    #slider {
-      position: absolute;
-      top: 0;
-      left: 50%; /* 초기 슬라이더 위치 */
-      width: 4px;
-      height: 100%;
-      background-color: #fff;
-      cursor: ew-resize;
-      z-index: 3; /* 슬라이더가 가장 위에 오도록 설정 */
-    }
-
-    h1, h2 {
-      text-align: center;
-      margin: 10px 0;
-    }
-  </style>
-</head>
-<body>
-  <h1><b>A</b> VS <b>B</b></h1>
-  <h2>"Turn the bear statue into a wild boar"</h2>
-
-  <div id="video-compare-container">
-    <!-- 왼쪽 비디오 -->
-    <video id="video-a" class="sync-video" autoplay muted loop playsinline>
-      <source src="video2.mp4" type="video/mp4">
-    </video>
-    <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
-          <strong> Wild boar </strong>
-      </figcaption>
-    </figure>
-
-    <!-- 오른쪽 비디오 (클리퍼로 덮음) -->
-    <div id="video-clipper">
-      <video id="video-b" class="sync-video" autoplay muted loop playsinline>
-        <source src="video1.mp4" type="video/mp4">
-      </video>
-      <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
-          <strong> Wild boar </strong>
-      </figcaption>
-    </figure>
-    </div>
-
-    <!-- 슬라이더 -->
-    <div id="slider"></div>
-  </div>
-
-  <script>
-    const videoContainer = document.getElementById("video-compare-container");
-    const videoClipper = document.getElementById("video-clipper");
-    const slider = document.getElementById("slider");
-
-    // 슬라이더 드래그 구현
-    slider.onmousedown = function (e) {
-      e.preventDefault();
-
-      document.onmousemove = function (e) {
-        const rect = videoContainer.getBoundingClientRect();
-        let position = e.clientX - rect.left;
-
-        // 위치 값 제한 (0px ~ 컨테이너 너비)
-        if (position < 0) position = 0;
-        if (position > rect.width) position = rect.width;
-
-        // 클리핑 영역 및 슬라이더 위치 업데이트
-        const widthPercentage = (position / rect.width) * 100;
-        videoClipper.style.width = widthPercentage + "%";
-        slider.style.left = widthPercentage + "%";
-      };
-
-      document.onmouseup = function () {
-        document.onmousemove = null;
-        document.onmouseup = null;
-      };
-    };
-
-    // 터치 이벤트 지원
-    slider.ontouchstart = function (e) {
-      document.ontouchmove = function (e) {
-        const rect = videoContainer.getBoundingClientRect();
-        let position = e.touches[0].clientX - rect.left;
-
-        if (position < 0) position = 0;
-        if (position > rect.width) position = rect.width;
-
-        const widthPercentage = (position / rect.width) * 100;
-        videoClipper.style.width = widthPercentage + "%";
-        slider.style.left = widthPercentage + "%";
-      };
-
-      document.ontouchend = function () {
-        document.ontouchmove = null;
-        document.ontouchend = null;
-      };
-    };
-  </script>
-</body>
-</html>
-
-
 
 
 
@@ -1026,133 +881,46 @@ figcaption {
 
 <section class="section">
   <div class="container is-max-desktop">
-
     <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
+      <!-- qualitative comparison -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-3">Qualitative comparison</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-        </video>
+            <img src="comparison_11_14_7_marble-1.png" alt="Teaser" style="width: 100%; height: auto;" />
+            <figcaption style="text-align: center; f
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> Wild boar </strong>
       </figcaption>
     </figure>
       </div>
-      <div class="item item-chair-tp">
-        <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-          <source src="/workspaces/editsplat-cvpr.github.io/bear_boar.mp4"
-                  type="video/mp4">
-        </video>
-        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
-          <strong> Wild boar </strong>
-      </figcaption>
-    </figure>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src=""
-                      type="video/mp4">
-            </video>
-            <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
-          <strong> Wild boar </strong>
-      </figcaption>
-    </figure>
-          </div>
-
-        </div>
-      </div>
     </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src=""
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src=""
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src=""
-                    type="video/mp4">
-          </video>
-          <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
-          <strong> Wild boar </strong>
-      </figcaption>
-    </figure>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
- 
+  </div>
 
 </section>
 
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+      <!-- quantitative comparison -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Qualitative comparison</h2>
+          <p>
+            <img src="quantitative_comparison.png" alt="Teaser" style="width: 50%; height: auto;" />
+            <figcaption style="text-align: center; f
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> quantitative comparison caption </strong>
+      </figcaption>
+    </figure>
+      </div>
+    </div>
+  </div>
+
+</section>
 
 
 <footer class="footer">
