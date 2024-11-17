@@ -169,265 +169,373 @@
 <br><br>
 <!-- Videos Section -->
 <style>
-  /* 공통 스타일 */
-  .video-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0px;
+  /* 부모 컨테이너 */
+  .container {
+    max-width: 1200px; /* 전체 너비 제한 */
+    margin: 0 auto; /* 가운데 정렬 */
   }
 
+  /* Flexbox 행 */
+  .video-row {
+    display: flex; /* Flexbox 사용 */
+    justify-content: space-between; /* 비디오 간격 균등 */
+    align-items: flex-start; /* 비디오 및 캡션 정렬 */
+    gap: 1px; /* 비디오 간 간격 */
+  }
+
+  /* 기본 비디오와 캡션 래퍼 */
   .video-wrapper {
-    flex: 1;
-    max-width: 33%; /* 기본 최대 너비 */
-    overflow: hidden;
+    flex: 0 1 calc(33.33% - 1px); /* 한 행에 3개의 비디오 배치 */
+    max-width: calc(33.33% - 1px); /* 최대 너비 제한 */
+    text-align: center; /* 캡션 가운데 정렬 */
   }
 
   .video-wrapper video {
-    width: 100%;
-    height: 100%;
+    width: 100%; /* 비디오 너비를 래퍼에 맞춤 */
+    height: auto; /* 비디오 높이를 자동으로 조정 */
     object-fit: cover; /* 비디오 비율 유지 */
   }
 
-  /* 16:9 비율 (기본) */
-  .video-wrapper {
-    aspect-ratio: 16 / 9;
-  }
+/* 9:9 비율 */
+.video-row-square .video-wrapper {
+  aspect-ratio: 9 / 9;
+  flex: 0 1 calc(25% - 0px); /* 한 행에 4개 비디오 배치 */
+  max-width: calc(25% - 0px); /* flex와 일관된 너비 */
+}
 
-  /* 9:9 비율 */
-  .video-row-square .video-wrapper {
-    aspect-ratio: 9 / 9;
-    max-width: 25%; 
-  }
+/* 9:16 비율 */
+.video-row-portrait .video-wrapper {
+  aspect-ratio: 9 / 16;
+  flex: 0 1 calc(16.66% - 0px); /* 한 행에 6개 비디오 배치 */
+  max-width: calc(16.66% - 0px); /* flex와 일관된 너비 */
+}
 
-  /* 9:16 비율 */
-  .video-row-portrait .video-wrapper {
-    aspect-ratio: 9 / 16; /* 비율 변경 */
-    max-width: 16.66%;    /* 6개 비디오가 한 행에 들어갈 수 있도록 설정 */
-  }
+
+  /* 캡션 스타일 */
+  .video-wrapper figcaption,
+  .video-row-square .video-wrapper figcaption,
+  .video-row-portrait .video-wrapper figcaption {
+    margin-top: 2px; /* 비디오와 캡션 사이 간격 */
+    font-size: 14px; /* 캡션 글자 크기 */
+    color: #555; /* 캡션 색상 */
+    font-style: italic; /* 캡션 글자 스타일 */
+    text-align: center; /* 캡션 가운데 정렬 */
   }
 </style>
+
+
 
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="video-row">
       <!-- 첫 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser1" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/bear_boar.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
 
       <!-- 두 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser2" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/bear_polar.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
 
       <!-- 세 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser3" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/bear_robot.mp4" type="video/mp4">
         </video>
-      </div>
-    </div>
-  </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
 </section>
 
+<br><br>
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="video-row">
       <!-- 첫 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser1" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/bicycle_autumn.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
 
       <!-- 두 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser2" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/bicycle_desert.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
 
       <!-- 세 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser3" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/bicycle_watercolor.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
     </div>
   </div>
 </section>
 
+<br><br>
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="video-row">
       <!-- 첫 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser1" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/bonsai_paper.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
 
       <!-- 두 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser2" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/bonsai_autumn.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
 
       <!-- 세 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser3" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+ 
     </div>
   </div>
 </section>
 
+<br><br>
 
-</style>
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="video-row video-row-square">
-      <div class="video-wrapper video-square">
+    <figure class="video-wrapper video-square">\
         <video id="teaser1" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/face_harry.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
 
       <!-- 두 번째 비디오 -->
-      <div class="video-wrapper">
+         <figure class="video-wrapper video-square">
         <video id="teaser2" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/face_marble.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
 
       <!-- 세 번째 비디오 -->
-      <div class="video-wrapper">
+         <figure class="video-wrapper video-square">
         <video id="teaser3" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/face_paper.mp4" type="video/mp4">
         </video>
-      </div>
-    </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
   </div>
+</div>
 </section>
 
+<br><br>
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="video-row video-row-portrait">
-      <div class="video-wrapper video-portrait">
+      <!-- 첫 번째 비디오 -->
+      <figure class="video-wrapper video-portrait">
         <video id="teaser1" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/fangzhou_gogh.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
 
       <!-- 두 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper video-portrait">
         <video id="teaser2" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/fangzhou_steve.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
 
       <!-- 세 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper video-portrait">
         <video id="teaser3" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/fangzhou_pixar.mp4" type="video/mp4">
         </video>
-      </div>
-    </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
   </div>
+</div>
+
 </section>
 
+<br><br>
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="video-row">
       <!-- 첫 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser1" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/garden_autumn.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
 
       <!-- 두 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser2" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/garden_foggy.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+   
 
       <!-- 세 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser3" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/garden_underwater.mp4" type="video/mp4">
         </video>
-      </div>
-    </div>
-  </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
+
 </section>
 
+<br><br>
 <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="video-row video-row-portrait">
-      <div class="video-wrapper video-portrait">
+  <div class="video-row video-row-portrait">
+    <!-- 첫 번째 비디오 -->
+    <figure class="video-wrapper video-portrait">
         <video id="teaser1" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/person_suit.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
 
       <!-- 두 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper video-portrait">
         <video id="teaser2" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/person_minecraft.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
 
       <!-- 세 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper video-portrait">
         <video id="teaser3" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/person_robot.mp4" type="video/mp4">
         </video>
-      </div>
-    </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
   </div>
+</div>
 </section>
 
+<br><br>
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="video-row">
       <!-- 첫 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser1" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/stone_horse_jade.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
 
       <!-- 두 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser2" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/stone_horse_wooden_carving.mp4" type="video/mp4">
         </video>
-      </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
 
       <!-- 세 번째 비디오 -->
-      <div class="video-wrapper">
+      <figure class="video-wrapper">
         <video id="teaser3" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/stone_horse_robot.mp4" type="video/mp4">
         </video>
-      </div>
-    </div>
-  </div>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
+
 </section>
 
 
 
 
-
+<br><br> <br><br>
+<br>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -499,12 +607,20 @@
     <video id="video-a" autoplay muted loop>
       <source src="video2.mp4" type="video/mp4">
     </video>
+    <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
 
     <!-- 오른쪽 비디오 (클리퍼로 덮음) -->
     <div id="video-clipper">
       <video id="video-b" autoplay muted loop>
         <source src="video1.mp4" type="video/mp4">
       </video>
+      <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
     </div>
 
     <!-- 슬라이더 -->
@@ -584,12 +700,20 @@
             would be impossible without nerfies since it would require going through a wall.
           </p>
         </video>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
       </div>
       <div class="item item-chair-tp">
         <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
           <source src="/workspaces/editsplat-cvpr.github.io/bear_boar.mp4"
                   type="video/mp4">
         </video>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
         </div>
       </div>
       <!--/ Visual Effects. -->
@@ -607,6 +731,10 @@
               <source src=""
                       type="video/mp4">
             </video>
+            <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
           </div>
 
         </div>
@@ -671,6 +799,10 @@
             <source src=""
                     type="video/mp4">
           </video>
+          <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Wild boar </strong>
+      </figcaption>
+    </figure>
         </div>
         <!--/ Re-rendering. -->
 
