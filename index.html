@@ -138,12 +138,12 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
     <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 15px 0 0;">
+    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 50px 0 0;">
         <div class="column" style="width: 80%; padding: 0;">
             <h2 class="title is-3"> Abstract </h2>
             <div class="content has-text-justified">
                 Recent advancements in 3D editing have highlighted the potential of text-driven methods in real-time, user-friendly AR/VR applications. However, current methods rely on 2D diffusion models without adequately considering multi-view information, resulting in multi-view inconsistency. While 3D Gaussian Splatting (3DGS) significantly improves rendering quality and speed, its 3D editing process encounters difficulties with inefficient optimization, as pre-trained Gaussians retain excessive source information, hindering optimization.
-                <br> <br>
+                <br> 
                 To address these limitations, we propose <strong> EditSplat </strong>, a novel 3D editing framework that integrates Multi-view Fusion Guidance (MFG) and Attention-Guided Trimming (AGT). Our MFG ensures multi-view consistency by incorporating essential multi-view information into the diffusion process, leveraging classifier-free guidance from the text-to-image diffusion model and the geometric properties of 3DGS. Additionally, our AGT leverages the explicit representation of 3DGS to selectively prune and optimize 3D Gaussians, enhancing optimization efficiency and enabling precise, semantically rich local edits. Through extensive qualitative and quantitative evaluations, EditSplat achieves superior multi-view consistency and editing quality over existing methods, significantly enhancing overall efficiency.
             </div>
         </div>
@@ -154,7 +154,7 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Video -->
-    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 80px 0 0;">
+    <div class="columns is-centered has-text-centered" style="width: 100%; margin: 70px 0 0;">
         <div class="column" style="width: 100%; padding: 0;">
             <h2 class="title is-3"> Videos </h2> 
             <h2 class="subtitle has-text-centered" style="width: 100%; margin: 30px 0 0;">
@@ -451,53 +451,53 @@ figcaption {
 </section>
 
 <br><br>
-
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="video-row video-row-square">
-            <!-- 왼쪽 비디오 -->
-            <figure class="left-video-wrapper2">
-              <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
-                <source src="./static/SOURCE/face.mp4" type="video/mp4">
-              </video>
-              <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
-                <strong> Source </strong>
-              </figcaption>
-            </figure>
+      <!-- 왼쪽 비디오 -->
+      <figure class="left-video-wrapper2">
+        <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
+          <source src="./static/SOURCE/face.mp4" type="video/mp4">
+        </video>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Source </strong>
+        </figcaption>
+      </figure>
 
-    <figure class="video-wrapper video-square">
-      <video class="sync-video" autoplay muted loop playsinline>
+      <!-- 첫 번째 비디오 -->
+      <figure class="video-wrapper video-square">
+        <video class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/face_harry.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn him into a harry potter" </strong>
-      </figcaption>
-    </figure>
-
+        </figcaption>
+      </figure>
 
       <!-- 두 번째 비디오 -->
-         <figure class="video-wrapper video-square">
-          <video class="sync-video" autoplay muted loop playsinline>
+      <figure class="video-wrapper video-square">
+        <video class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/face_marble.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make his face resemble that of a marble sculpture" </strong>
-      </figcaption>
-    </figure>
-
+        </figcaption>
+      </figure>
 
       <!-- 세 번째 비디오 -->
-         <figure class="video-wrapper video-square">
-          <video class="sync-video" autoplay muted loop playsinline>
+      <figure class="video-wrapper video-square">
+        <video class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/face_paper.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make him appear like he's made of paper with folded edges" </strong>
-      </figcaption>
-    </figure>
+        </figcaption>
+      </figure>
+    </div>
   </div>
-</div>
 </section>
+
+
 <script>
   const videos = document.querySelectorAll('.sync-video');
   let isSyncing = false;
@@ -535,51 +535,43 @@ figcaption {
   });
 </script>
 <br><br>
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="video-row video-row-portrait">
-            <!-- 왼쪽 비디오 -->
-            <figure class="left-video-wrapper3">
-              <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
-                <source src="./static/SOURCE/fangzhou.mp4" type="video/mp4">
-              </video>
-              <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
-                <strong> Source </strong>
-              </figcaption>
-            </figure>
+      <!-- 왼쪽 비디오 -->
+      <figure class="video-wrapper">
+        <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
+          <source src="./static/SOURCE/fangzhou.mp4" type="video/mp4">
+        </video>
+        <figcaption>Source</figcaption>
+      </figure>
       <!-- 첫 번째 비디오 -->
-      <figure class="video-wrapper video-portrait">
+      <figure class="video-wrapper">
         <video id="teaser1" class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/fangzhou_gogh.mp4" type="video/mp4">
         </video>
-        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
-          <strong> "Turn him into Van gogh" </strong>
-      </figcaption>
-    </figure>
-
+        <figcaption>"Turn him into Van Gogh"</figcaption>
+      </figure>
       <!-- 두 번째 비디오 -->
-      <figure class="video-wrapper video-portrait">
+      <figure class="video-wrapper">
         <video id="teaser2" class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/fangzhou_steve.mp4" type="video/mp4">
         </video>
-        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
-          <strong> "Turn him into Steve jobs" </strong>
-      </figcaption>
-    </figure>
-
+        <figcaption>"Turn him into Steve Jobs"</figcaption>
+      </figure>
       <!-- 세 번째 비디오 -->
-      <figure class="video-wrapper video-portrait">
+      <figure class="video-wrapper">
         <video id="teaser3" class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/fangzhou_pixar.mp4" type="video/mp4">
         </video>
-        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
-          <strong> "Turn him into a pixar character" </strong>
-      </figcaption>
-    </figure>
+        <figcaption>"Turn him into a Pixar character"</figcaption>
+      </figure>
+    </div>
   </div>
-</div>
-
 </section>
+
+
 <script>
   const videos = document.querySelectorAll('.sync-video');
   let isSyncing = false;
@@ -702,29 +694,28 @@ figcaption {
   });
 </script>
 <br><br>
-
-
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="video-row video-row-portrait">
-                <!-- 왼쪽 비디오 -->
-                <figure class="left-video-wrapper3">
-                  <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
-                    <source src="./static/SOURCE/person.mp4" type="video/mp4">
-                  </video>
-                  <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
-                    <strong> Source </strong>
-                  </figcaption>
-                </figure>
-    <!-- 첫 번째 비디오 -->
-    <figure class="video-wrapper video-portrait">
+      <!-- 왼쪽 비디오 -->
+      <figure class="video-wrapper">
+        <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
+          <source src="./static/SOURCE/person.mp4" type="video/mp4">
+        </video>
+        <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
+          <strong> Source </strong>
+        </figcaption>
+      </figure>
+
+      <!-- 첫 번째 비디오 -->
+      <figure class="video-wrapper video-portrait">
         <video id="teaser1" class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/person_suit.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make him wear a suit" </strong>
-      </figcaption>
-    </figure>
+        </figcaption>
+      </figure>
 
       <!-- 두 번째 비디오 -->
       <figure class="video-wrapper video-portrait">
@@ -733,9 +724,8 @@ figcaption {
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn him into a Minecraft character" </strong>
-      </figcaption>
-    </figure>
-
+        </figcaption>
+      </figure>
 
       <!-- 세 번째 비디오 -->
       <figure class="video-wrapper video-portrait">
@@ -744,11 +734,12 @@ figcaption {
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn him into a robot" </strong>
-      </figcaption>
-    </figure>
+        </figcaption>
+      </figure>
+    </div>
   </div>
-</div>
 </section>
+
 <script>
   const videos = document.querySelectorAll('.sync-video');
   let isSyncing = false;
@@ -884,7 +875,7 @@ figcaption {
             <h2 class="title is-3"> Qualitative comparison </h2>
             <div class="content has-text-justified">
           <div class="figure-wrapper">
-            <img src="comparison_11_14_7_marble-1.png" alt="Teaser" class="centered-image" />
+            <img src="comparison_11_14_7_marble-1.png" alt="Teaser" class="centered-image" style="width: 90%;" />
             <figcaption class="custom-caption">
               <strong> Qualitative comparison. </strong>
               EditSplat provides more intense and precise editing compared to other baselines.
@@ -910,7 +901,7 @@ figcaption {
             <figure class="figure-wrapper">
               <img src="quantitative_comparison.png" alt="Teaser" class="centered-image" style="width: 60%;" />
               <figcaption class="custom-caption">
-                <strong> QuantitativeComparison.</strong> CLIPdir: CLIPtext-image
+                <strong> Quantitative Comparison.</strong> CLIPdir: CLIPtext-image
                 direction similarity; CLIPsim: CLIPtext-image similarity. Userstudy conducted to evaluate human preference.
               </figcaption>
             </figure>
