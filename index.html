@@ -165,232 +165,230 @@
               <span class="dnerf"><strong> EditSplat</span> </strong> . demonstrates its capability for flexible and high-quality 3D scene editing 
           when applied to pre-trained 3DGS model.
             </h2>
+
+
 <br><br>
+<!-- Videos Section -->
+<style>
+  .video-row {
+    display: flex;               /* Flexbox 사용 */
+    justify-content: space-between; /* 비디오 간격 균등 배치 */
+    align-items: center;         /* 비디오 상하 정렬 */
+    gap: 0px;                   /* 비디오 간 간격 */
+  }
+
+  .video-wrapper {
+    flex: 1;                     /* 각 비디오가 동일한 비율로 늘어남 */
+    max-width: 33%;              /* 각 비디오가 행에서 최대 30% 차지 */
+    aspect-ratio: 16 / 9;        /* 비디오 비율 유지 */
+    overflow: hidden;
+  }
+
+  .video-wrapper video {
+    width: 100%;                 /* 비디오가 부모 너비를 꽉 채움 */
+    height: 100%;                /* 비디오가 부모 높이를 꽉 채움 */
+    object-fit: cover;           /* 비율 유지하면서 잘림 방지 */
+  }
+</style>
+
+
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/bear_boar.mp4"
-                type="video/mp4">
-      </video>
-      
+    <div class="video-row">
+      <!-- 첫 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser1" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/bear_boar.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 두 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser2" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/bear_polar.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 세 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser3" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/bear_robot.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/bear_polar.mp4"
-                type="video/mp4">
-      </video>
-      
+    <div class="video-row">
+      <!-- 첫 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser1" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/bicycle_autumn.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 두 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser2" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/bicycle_desert.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 세 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser3" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/bicycle_watercolor.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/bear_robot.mp4"
-                type="video/mp4">
-      </video>
-      
+    <div class="video-row">
+      <!-- 첫 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser1" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/bonsai_paper.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 두 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser2" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/bonsai_autumn.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 세 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser3" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</style>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="video-row">
+      <!-- 첫 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser1" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/face_harry.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 두 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser2" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/face_marble.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 세 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser3" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/face_paper.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/bicycle_autumn.mp4"
-                type="video/mp4">
-      </video>
-      
+    <div class="video-row">
+      <!-- 첫 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser1" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/fangzhou_gogh.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 두 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser2" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/fangzhou_steve.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 세 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser3" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/fangzhou_pixar.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="video-row">
+      <!-- 첫 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser1" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/person_suit.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 두 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser2" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/person_minecraft.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 세 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser3" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/person_robot.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/bicycle_desert.mp4"
-                type="video/mp4">
-      </video>
-      
+    <div class="video-row">
+      <!-- 첫 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser1" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/stone_horse_jade.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 두 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser2" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/stone_horse_wooden_carving.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 세 번째 비디오 -->
+      <div class="video-wrapper">
+        <video id="teaser3" autoplay muted loop playsinline>
+          <source src="static/RENDERING_RESULTS/stone_horse_robot.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/bicycle_watercolor.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/bonsai_paper.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/bonsai_autumn.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/face_harry.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/face_marble.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/face_paper.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/fangzhou_gogh.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/fangzhou_steve.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/person_minecraft.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/person_suit.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/stone_horse_wooden_carving.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/stone_horse_jade.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="static/RENDERING_RESULTS/stone_horse_robot.mp4"
-                type="video/mp4">
-      </video>
-      
-    </div>
-  </div>
-</section>
 
 <!DOCTYPE html>
 <html lang="en">
