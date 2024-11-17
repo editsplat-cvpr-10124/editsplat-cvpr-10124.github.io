@@ -13,22 +13,22 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="././static/css/bulma.min.css">
+  <link rel="stylesheet" href="././static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="././static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="././static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
-  <link rel="stylesheet" href="./static/css/styles.css">
+  <link rel="stylesheet" href="././static/css/index.css">
+  <link rel="icon" href="././static/images/favicon.svg">
+  <link rel="stylesheet" href="././static/css/styles.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-  <script src="./static/js/scripts.js"></script>
+  <script defer src="././static/js/fontawesome.all.min.js"></script>
+  <script src="././static/js/bulma-carousel.min.js"></script>
+  <script src="././static/js/bulma-slider.min.js"></script>
+  <script src="././static/js/index.js"></script>
+  <script src="././static/js/scripts.js"></script>
 </head>
 <body>
 
@@ -110,16 +110,24 @@
   </div>
 </section>
 
+<!-- Main Figure Section -->
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-        <img src="teaser.jpg" alt="Teaser" style="width: 100%; height: auto;" />
-        <figcaption style="text-align: center; font-style: italic; margin-top: 5px;">
-            Figure 1: Teaser Image for Editsplat Framework.
-        </figcaption>
-     
-    </div>
+      <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0px 0 0;">
+        <div class="column" style="width: 80%; padding: 0;">
+            <h2 class="title is-3"> Overview </h2> 
+        <img src="Main_fig.jpg" alt="Teaser" style="width: 100%; height: auto;" />
+        <figcaption style="text-align: center; font-style: italic; margin-top: 10px;">
+          <strong> Editsplat Overview.</strong> EditSplat consists of two main methods: 
+          (1) Multi-view Fusion Guidance <strong>(MFG)</strong>, which aligns multi-view information with text prompts and source images to ensure multi-view consistency; 
+          (2) Attention-Guided Trimming<strong> (AGT)</strong>, which prunes pre-trained Gaussians for optimization efficiency and selectively optimizes Gaussians for semantic local editing.
+      </figcaption>
+  </figure>
+    </div>    
   </div>
+</div>
 </section>
 
 <br> 
@@ -142,19 +150,6 @@
     </div>
     <!--/ Abstract. -->
 
-<!-- Main Figure Section -->
-<div class="columns" style="width: 100%; margin: 20 0 0;">
-    <div class="column" style="width: 100%; padding: 0;">
-        <figure style="margin: 50px 0 0; padding: 0;">
-            <img src="Main_fig.jpg" alt="Editsplat Overview" style="width: 100%; height: auto;" />
-            <figcaption style="text-align: center; font-style: italic; margin-top: 10px;">
-                <strong> Editsplat Overview.</strong> EditSplat consists of two main methods: 
-                (1) Multi-view Fusion Guidance <strong>(MFG)</strong>, which aligns multi-view information with text prompts and source images to ensure multi-view consistency; 
-                (2) Attention-Guided Trimming<strong> (AGT)</strong>, which prunes pre-trained Gaussians for optimization efficiency and selectively optimizes Gaussians for semantic local editing.
-            </figcaption>
-        </figure>
-    </div>
-</div>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -165,8 +160,6 @@
             <h2 class="subtitle has-text-centered" style="width: 100%; margin: 30px 0 0;">
               <span class="dnerf"><strong> EditSplat</span> </strong> . demonstrates its capability for flexible and high-quality 3D scene editing.
             </h2>
-
-
 <br>
 
 
@@ -241,14 +234,13 @@ figcaption {
 }
 </style>
 
-
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="video-row">
       <!-- 왼쪽 비디오 -->
       <figure class="left-video-wrapper">
         <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/SOURCE/bear.mp4" type="video/mp4">
+          <source src="././static/SOURCE/bear.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> Source </strong>
@@ -258,7 +250,7 @@ figcaption {
       <!-- 첫 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser1" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/bear_boar.mp4" type="video/mp4">
+          <source src="././static/RENDERING_RESULTS/bear_boar.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn the bear statue into wild boar" </strong>
@@ -268,7 +260,7 @@ figcaption {
       <!-- 두 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser2" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/bear_polar.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/bear_polar.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn the bear statue into a polar bear" </strong>
@@ -278,7 +270,7 @@ figcaption {
       <!-- 세 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser3" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/bear_robot.mp4" type="video/mp4">
+          <source src="././static/RENDERING_RESULTS/bear_robot.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn the bear statue into a metallic robot" </strong>
@@ -287,42 +279,6 @@ figcaption {
 
 </section>
 
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
-
-  // 싱크 맞추기
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime;
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
-        video.currentTime = masterTime;
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오가 로드되면 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve);
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play();
-      video.playbackRate = 1.0;
-      video.addEventListener('play', () => videos.forEach(v => v.play()));
-      video.addEventListener('pause', () => videos.forEach(v => v.pause()));
-      video.addEventListener('timeupdate', syncVideos);
-    });
-  });
-</script> 
 
 <br><br>
 <section class="hero teaser">
@@ -331,7 +287,7 @@ figcaption {
       <!-- 왼쪽 비디오 -->
       <figure class="left-video-wrapper">
         <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/SOURCE/bicycle.mp4" type="video/mp4">
+          <source src="./static/SOURCE/bicycle.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> Source </strong>
@@ -340,7 +296,7 @@ figcaption {
       <!-- 첫 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser1" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/bicycle_autumn.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/bicycle_autumn.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make it autumn" </strong>
@@ -351,7 +307,7 @@ figcaption {
       <!-- 두 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser2" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/bicycle_desert.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/bicycle_desert.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn the ground into a namibian desert" </strong>
@@ -362,7 +318,7 @@ figcaption {
       <!-- 세 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser3" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/bicycle_watercolor.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/bicycle_watercolor.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make the entire scene look as if it's painted in watercolor style" </strong>
@@ -373,42 +329,7 @@ figcaption {
   </div>
 </section>
 
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
 
-  // 싱크 맞추기
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime;
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
-        video.currentTime = masterTime;
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오가 로드되면 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve);
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play();
-      video.playbackRate = 1.0;
-      video.addEventListener('play', () => videos.forEach(v => v.play()));
-      video.addEventListener('pause', () => videos.forEach(v => v.pause()));
-      video.addEventListener('timeupdate', syncVideos);
-    });
-  });
-</script>
 
 <br><br>
 <section class="hero teaser">
@@ -417,7 +338,7 @@ figcaption {
       <!-- 왼쪽 비디오 -->
       <figure class="left-video-wrapper">
         <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/SOURCE/bonsai.mp4" type="video/mp4">
+          <source src="./static/SOURCE/bonsai.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> Source </strong>
@@ -426,7 +347,7 @@ figcaption {
       <!-- 첫 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser1" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/bonsai_paper.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/bonsai_paper.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Change the bonsai to look like it's made of paper, folded intricate origami shapesa" </strong>
@@ -437,7 +358,7 @@ figcaption {
       <!-- 두 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser2" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/bonsai_autumn.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/bonsai_autumn.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Change the bonsai flowers into autumn leaves" </strong>
@@ -448,7 +369,7 @@ figcaption {
       <!-- 세 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser3" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make the bonsai snowy" </strong>
@@ -459,42 +380,6 @@ figcaption {
   </div>
 </section>
 
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
-
-  // 싱크 맞추기
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime;
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
-        video.currentTime = masterTime;
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오가 로드되면 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve);
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play();
-      video.playbackRate = 1.0;
-      video.addEventListener('play', () => videos.forEach(v => v.play()));
-      video.addEventListener('pause', () => videos.forEach(v => v.pause()));
-      video.addEventListener('timeupdate', syncVideos);
-    });
-  });
-</script>
 <br><br>
 
 <section class="hero teaser">
@@ -503,7 +388,7 @@ figcaption {
             <!-- 왼쪽 비디오 -->
             <figure class="left-video-wrapper2">
               <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
-                <source src="static/SOURCE/face.mp4" type="video/mp4">
+                <source src="./static/SOURCE/face.mp4" type="video/mp4">
               </video>
               <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
                 <strong> Source </strong>
@@ -512,7 +397,7 @@ figcaption {
 
     <figure class="video-wrapper video-square">
       <video class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/face_harry.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/face_harry.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn him into a harry potter" </strong>
@@ -523,7 +408,7 @@ figcaption {
       <!-- 두 번째 비디오 -->
          <figure class="video-wrapper video-square">
           <video class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/face_marble.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/face_marble.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make his face resemble that of a marble sculpture" </strong>
@@ -534,7 +419,7 @@ figcaption {
       <!-- 세 번째 비디오 -->
          <figure class="video-wrapper video-square">
           <video class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/face_paper.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/face_paper.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make him appear like he's made of paper with folded edges" </strong>
@@ -544,43 +429,6 @@ figcaption {
 </div>
 </section>
 
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
-
-  // 싱크 맞추기
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime;
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
-        video.currentTime = masterTime;
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오가 로드되면 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve);
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play();
-      video.playbackRate = 1.0;
-      video.addEventListener('play', () => videos.forEach(v => v.play()));
-      video.addEventListener('pause', () => videos.forEach(v => v.pause()));
-      video.addEventListener('timeupdate', syncVideos);
-    });
-  });
-</script>
-
 <br><br>
 <section class="hero teaser">
   <div class="container is-max-desktop">
@@ -588,7 +436,7 @@ figcaption {
             <!-- 왼쪽 비디오 -->
             <figure class="left-video-wrapper3">
               <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
-                <source src="static/SOURCE/fangzhou.mp4" type="video/mp4">
+                <source src="./static/SOURCE/fangzhou.mp4" type="video/mp4">
               </video>
               <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
                 <strong> Source </strong>
@@ -597,7 +445,7 @@ figcaption {
       <!-- 첫 번째 비디오 -->
       <figure class="video-wrapper video-portrait">
         <video id="teaser1" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/fangzhou_gogh.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/fangzhou_gogh.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn him into Van gogh" </strong>
@@ -607,7 +455,7 @@ figcaption {
       <!-- 두 번째 비디오 -->
       <figure class="video-wrapper video-portrait">
         <video id="teaser2" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/fangzhou_steve.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/fangzhou_steve.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn him into Steve jobs" </strong>
@@ -617,7 +465,7 @@ figcaption {
       <!-- 세 번째 비디오 -->
       <figure class="video-wrapper video-portrait">
         <video id="teaser3" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/fangzhou_pixar.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/fangzhou_pixar.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn him into a pixar character" </strong>
@@ -628,42 +476,6 @@ figcaption {
 
 </section>
 
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
-
-  // 싱크 맞추기
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime;
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
-        video.currentTime = masterTime;
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오가 로드되면 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve);
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play();
-      video.playbackRate = 1.0;
-      video.addEventListener('play', () => videos.forEach(v => v.play()));
-      video.addEventListener('pause', () => videos.forEach(v => v.pause()));
-      video.addEventListener('timeupdate', syncVideos);
-    });
-  });
-</script>
 
 
 <br><br>
@@ -673,7 +485,7 @@ figcaption {
             <!-- 왼쪽 비디오 -->
             <figure class="left-video-wrapper">
               <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
-                <source src="static/SOURCE/garden.mp4" type="video/mp4">
+                <source src="./static/SOURCE/garden.mp4" type="video/mp4">
               </video>
               <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
                 <strong> Source </strong>
@@ -682,7 +494,7 @@ figcaption {
       <!-- 첫 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser1" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/garden_autumn.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/garden_autumn.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make it autumn" </strong>
@@ -693,7 +505,7 @@ figcaption {
       <!-- 두 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser2" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/garden_foggy.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/garden_foggy.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make the scene look foggy" </strong>
@@ -704,7 +516,7 @@ figcaption {
       <!-- 세 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser3" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/garden_underwater.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/garden_underwater.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make the scene appear as though it's underwater" </strong>
@@ -714,80 +526,8 @@ figcaption {
 
 </section>
 
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
-
-  // 싱크 맞추기
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime;
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
-        video.currentTime = masterTime;
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오가 로드되면 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve);
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play();
-      video.playbackRate = 1.0;
-      video.addEventListener('play', () => videos.forEach(v => v.play()));
-      video.addEventListener('pause', () => videos.forEach(v => v.pause()));
-      video.addEventListener('timeupdate', syncVideos);
-    });
-  });
-</script>
 <br><br>
 
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
-
-  // 싱크 맞추기
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime;
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
-        video.currentTime = masterTime;
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오가 로드되면 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve);
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play();
-      video.playbackRate = 1.0;
-      video.addEventListener('play', () => videos.forEach(v => v.play()));
-      video.addEventListener('pause', () => videos.forEach(v => v.pause()));
-      video.addEventListener('timeupdate', syncVideos);
-    });
-  });
-</script>
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
@@ -795,7 +535,7 @@ figcaption {
                 <!-- 왼쪽 비디오 -->
                 <figure class="left-video-wrapper3">
                   <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
-                    <source src="static/SOURCE/person.mp4" type="video/mp4">
+                    <source src="./static/SOURCE/person.mp4" type="video/mp4">
                   </video>
                   <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
                     <strong> Source </strong>
@@ -804,7 +544,7 @@ figcaption {
     <!-- 첫 번째 비디오 -->
     <figure class="video-wrapper video-portrait">
         <video id="teaser1" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/person_suit.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/person_suit.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make him wear a suit" </strong>
@@ -814,7 +554,7 @@ figcaption {
       <!-- 두 번째 비디오 -->
       <figure class="video-wrapper video-portrait">
         <video id="teaser2" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/person_minecraft.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/person_minecraft.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn him into a Minecraft character" </strong>
@@ -825,7 +565,7 @@ figcaption {
       <!-- 세 번째 비디오 -->
       <figure class="video-wrapper video-portrait">
         <video id="teaser3" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/person_robot.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/person_robot.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn him into a robot" </strong>
@@ -842,7 +582,7 @@ figcaption {
       <!-- 왼쪽 비디오 -->
       <figure class="left-video-wrapper">
         <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/SOURCE/stone_horse.mp4" type="video/mp4">
+          <source src="./static/SOURCE/stone_horse.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> Source </strong>
@@ -851,7 +591,7 @@ figcaption {
       <!-- 첫 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser1" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/stone_horse_jade.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/stone_horse_jade.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn the horse statue into a jade carving" </strong>
@@ -861,7 +601,7 @@ figcaption {
       <!-- 두 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser2" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/stone_horse_wooden_carving.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/stone_horse_wooden_carving.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Turn the horse statue into a wooden carving" </strong>
@@ -872,7 +612,7 @@ figcaption {
       <!-- 세 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser3" class="sync-video" autoplay muted loop playsinline>
-          <source src="static/RENDERING_RESULTS/stone_horse_robot.mp4" type="video/mp4">
+          <source src="./static/RENDERING_RESULTS/stone_horse_robot.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 2px;">
           <strong> "Make the stone horse appear as a metallic robot horse" </strong>
@@ -882,43 +622,41 @@ figcaption {
 </section>
 
 
-
-
 <br><br> <br><br>
 
 <script>
   const videos = document.querySelectorAll('.sync-video');
   let isSyncing = false;
 
-  // 싱크 맞추기
+  // 비디오 싱크 맞추기 함수
   function syncVideos() {
     if (isSyncing) return;
     isSyncing = true;
 
-    const masterTime = videos[0].currentTime;
+    const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
     videos.forEach(video => {
       if (Math.abs(video.currentTime - masterTime) > 0.05) {
-        video.currentTime = masterTime;
+        video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
       }
     });
 
     isSyncing = false;
   }
 
-  // 모든 비디오가 로드되면 시작
+  // 모든 비디오 로드 후 싱크 및 재생 시작
   Promise.all(
     Array.from(videos).map(video =>
       new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve);
+        video.addEventListener('loadeddata', resolve); // 로드 완료 이벤트
       })
     )
   ).then(() => {
     videos.forEach(video => {
-      video.play();
-      video.playbackRate = 1.0;
-      video.addEventListener('play', () => videos.forEach(v => v.play()));
-      video.addEventListener('pause', () => videos.forEach(v => v.pause()));
-      video.addEventListener('timeupdate', syncVideos);
+      video.play(); // 모든 비디오 재생
+      video.playbackRate = 1.0; // 재생 속도 동일하게 설정
+      video.addEventListener('play', () => videos.forEach(v => v.play())); // 동시 재생
+      video.addEventListener('pause', () => videos.forEach(v => v.pause())); // 동시 일시정지
+      video.addEventListener('timeupdate', syncVideos); // 시간 동기화
     });
   });
 </script>
@@ -1211,7 +949,7 @@ figcaption {
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         href="././static/videos/nerfies_paper.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
