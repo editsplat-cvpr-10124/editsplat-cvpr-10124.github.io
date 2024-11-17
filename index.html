@@ -162,35 +162,51 @@
         <div class="column" style="width: 100%; padding: 0;">
             <h2 class="title is-3"> Video </h2> 
             <h2 class="subtitle has-text-centered" style="width: 100%; margin: 30px 0 0;">
-              <span class="dnerf"><strong> EditSplat</span> </strong> . demonstrates its capability for flexible and high-quality 3D scene editing 
-          when applied to pre-trained 3DGS model.
+              <span class="dnerf"><strong> EditSplat</span> </strong> . demonstrates its capability for flexible and high-quality 3D scene editing.
             </h2>
 
 
 <br><br>
 <!-- Videos Section -->
 <style>
+  /* 공통 스타일 */
   .video-row {
-    display: flex;               /* Flexbox 사용 */
-    justify-content: space-between; /* 비디오 간격 균등 배치 */
-    align-items: center;         /* 비디오 상하 정렬 */
-    gap: 0px;                   /* 비디오 간 간격 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
   }
 
   .video-wrapper {
-    flex: 1;                     /* 각 비디오가 동일한 비율로 늘어남 */
-    max-width: 33%;              /* 각 비디오가 행에서 최대 30% 차지 */
-    aspect-ratio: 16 / 9;        /* 비디오 비율 유지 */
+    flex: 1;
+    max-width: 33%; /* 기본 최대 너비 */
     overflow: hidden;
   }
 
   .video-wrapper video {
-    width: 100%;                 /* 비디오가 부모 너비를 꽉 채움 */
-    height: 100%;                /* 비디오가 부모 높이를 꽉 채움 */
-    object-fit: cover;           /* 비율 유지하면서 잘림 방지 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 비디오 비율 유지 */
+  }
+
+  /* 16:9 비율 (기본) */
+  .video-wrapper {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* 9:9 비율 */
+  .video-row-square .video-wrapper {
+    aspect-ratio: 9 / 9;
+    max-width: 25%; 
+  }
+
+  /* 9:16 비율 */
+  .video-row-portrait .video-wrapper {
+    aspect-ratio: 9 / 16; /* 비율 변경 */
+    max-width: 16.66%;    /* 6개 비디오가 한 행에 들어갈 수 있도록 설정 */
+  }
   }
 </style>
-
 
 
 <section class="hero teaser">
@@ -278,9 +294,8 @@
 </style>
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="video-row">
-      <!-- 첫 번째 비디오 -->
-      <div class="video-wrapper">
+    <div class="video-row video-row-square">
+      <div class="video-wrapper video-square">
         <video id="teaser1" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/face_harry.mp4" type="video/mp4">
         </video>
@@ -305,9 +320,8 @@
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="video-row">
-      <!-- 첫 번째 비디오 -->
-      <div class="video-wrapper">
+    <div class="video-row video-row-portrait">
+      <div class="video-wrapper video-portrait">
         <video id="teaser1" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/fangzhou_gogh.mp4" type="video/mp4">
         </video>
@@ -334,9 +348,8 @@
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="video-row">
-      <!-- 첫 번째 비디오 -->
-      <div class="video-wrapper">
+    <div class="video-row video-row-portrait">
+      <div class="video-wrapper video-portrait">
         <video id="teaser1" autoplay muted loop playsinline>
           <source src="static/RENDERING_RESULTS/person_suit.mp4" type="video/mp4">
         </video>
