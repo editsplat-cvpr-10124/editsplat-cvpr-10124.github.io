@@ -126,11 +126,12 @@
 <h2 class="subtitle has-text-centered">
 </h2>
 
-<section class="section">
+<section class="hero teaser">
   <div class="container is-max-desktop">
+    <div class="hero-body">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered" style="width: 100%; margin: 15px 0 0;">
-        <div class="column" style="width: 100%; padding: 0;">
+        <div class="column" style="width: 80%; padding: 0;">
             <h2 class="title is-3"> Abstract </h2>
             <div class="content has-text-justified">
                 Recent advancements in 3D editing have highlighted the potential of text-driven methods in real-time, user-friendly AR/VR applications. However, current methods rely on 2D diffusion models without adequately considering multi-view information, resulting in multi-view inconsistency. While 3D Gaussian Splatting (3DGS) significantly improves rendering quality and speed, its 3D editing process encounters difficulties with inefficient optimization, as pre-trained Gaussians retain excessive source information, hindering optimization.
@@ -169,93 +170,73 @@
 <br>
 <!-- Videos Section -->
 <style>
-  /* 부모 컨테이너 */
-  .container {
-    max-width: 1400px; /* 전체 너비 제한 */
-    margin: 0 auto; /* 가운데 정렬 */
-  }
-
-  /* Flexbox 행 */
-  .video-row {
-    display: flex; /* Flexbox 사용 */
-    justify-content: space-between; /* 비디오 간격 균등 */
-    align-items: flex-start; /* 비디오 및 캡션 정렬 */
-    gap: 1px; /* 비디오 간 간격 */
-  }
-
-  /* 왼쪽 비디오 */
-  .left-video-wrapper {
-    flex: 0 1 calc(33.3% - 3px); /* 왼쪽 비디오 크기 */
-    max-width: calc(33.5% - 3px);
-    text-align: center;
-    margin-right: 5px; /* 오른쪽 간격 */
-    border-right: 2px solid #ccc; /* 구분선 */
-    padding-right: 10px; /* 구분선과 내부 간격 */
-  }
-
-  /* 왼쪽 비디오 */
-  .left-video-wrapper2 {
-    flex: 0 1 calc(20% - 3px); /* 왼쪽 비디오 크기 */
-    max-width: calc(20% - 3px);
-    text-align: center;
-    margin-right: 5px; /* 오른쪽 간격 */
-    border-right: 2px solid #ccc; /* 구분선 */
-    padding-right: 10px; /* 구분선과 내부 간격 */
-  }
-
-   /* 왼쪽 비디오 */
-   .left-video-wrapper3 {
-    flex: 0 1 calc(16% - 3px); /* 왼쪽 비디오 크기 */
-    max-width: calc(16% - 3px);
-    text-align: center;
-    margin-right: 5px; /* 오른쪽 간격 */
-    border-right: 2px solid #ccc; /* 구분선 */
-    padding-right: 10px; /* 구분선과 내부 간격 */
-  }
-
-  .left-video-wrapper video {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  /* 기본 비디오와 캡션 래퍼 */
-  .video-wrapper {
-    flex: 0 1 calc(33.33% - 1px); /* 한 행에 3개의 비디오 배치 */
-    max-width: calc(33.33% - 1px); /* 최대 너비 제한 */
-    text-align: center; /* 캡션 가운데 정렬 */
-  }
-
-  .video-wrapper video {
-    width: 100%; /* 비디오 너비를 래퍼에 맞춤 */
-    height: auto; /* 비디오 높이를 자동으로 조정 */
-    object-fit: cover; /* 비디오 비율 유지 */
-  }
-
-/* 9:9 비율 */
-.video-row-square .video-wrapper {
-  aspect-ratio: 9 / 9;
-  flex: 0 1 calc(20% - 0px); /* 한 행에 4개 비디오 배치 */
-  max-width: calc(20% - 0px); /* flex와 일관된 너비 */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-/* 9:16 비율 */
+.video-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.left-video-wrapper,
+.left-video-wrapper2,
+.left-video-wrapper3 {
+  text-align: center;
+  border-right: 3px solid #ccc;
+  padding-right: 3px; /* 비디오와 경계선 사이 간격 */
+  margin-right: 3px;
+}
+
+.left-video-wrapper {
+  flex: 0 1 calc(33.3% - 3px);
+  max-width: calc(33.5% - 3px);
+}
+
+.left-video-wrapper2 {
+  flex: 0 1 calc(20% - 10px);
+  max-width: calc(20% - 10px);
+}
+
+.left-video-wrapper3 {
+  flex: 0 1 calc(16% - 3px);
+  max-width: calc(16% - 3px);
+}
+
+.video-wrapper {
+  flex: 0 1 calc(33.33% - 1px);
+  max-width: calc(33.33% - 1px);
+  text-align: center;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.video-row-square .video-wrapper {
+  aspect-ratio: 1; /* 정사각형 비율 */
+  flex: 0 1 calc(20% - 10px);
+  max-width: calc(20% - 10px);
+}
+
 .video-row-portrait .video-wrapper {
   aspect-ratio: 9 / 16;
-  flex: 0 1 calc(16.66% - 0px); /* 한 행에 6개 비디오 배치 */
-  max-width: calc(16.66% - 0px); /* flex와 일관된 너비 */
+  flex: 0 1 calc(16.66% - 10px);
+  max-width: calc(16.66% - 10px);
 }
 
-  /* 캡션 스타일 */
-  .video-wrapper figcaption,
-  .video-row-square .video-wrapper figcaption,
-  .video-row-portrait .video-wrapper figcaption {
-    margin-top: 2px; /* 비디오와 캡션 사이 간격 */
-    font-size: 16px; /* 캡션 글자 크기 */
-    color: #555; /* 캡션 색상 */
-    font-style: italic; /* 캡션 글자 스타일 */
-    text-align: center; /* 캡션 가운데 정렬 */
-  }
+figcaption {
+  margin-top: 5px;
+  font-size: 1em;
+  color: #555;
+  font-style: italic;
+  text-align: center;
+}
 </style>
 
 
@@ -454,7 +435,7 @@
 <br><br>
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="video-row video-row-square">
+    <div class="video-row video-row-portrait">
             <!-- 왼쪽 비디오 -->
             <figure class="left-video-wrapper3">
               <video id="teaser0" autoplay muted loop playsinline>
