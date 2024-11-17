@@ -168,6 +168,8 @@
 
 
 <br>
+
+
 <!-- Videos Section -->
 <style>
 .container {
@@ -625,6 +627,46 @@ figcaption {
 
 
 <br><br> <br><br>
+
+<script>
+  const videos = document.querySelectorAll('.sync-video');
+  let isSyncing = false;
+
+  // 싱크 맞추기
+  function syncVideos() {
+    if (isSyncing) return;
+    isSyncing = true;
+
+    const masterTime = videos[0].currentTime;
+    videos.forEach(video => {
+      if (Math.abs(video.currentTime - masterTime) > 0.05) {
+        video.currentTime = masterTime;
+      }
+    });
+
+    isSyncing = false;
+  }
+
+  // 모든 비디오가 로드되면 시작
+  Promise.all(
+    Array.from(videos).map(video =>
+      new Promise(resolve => {
+        video.addEventListener('loadeddata', resolve);
+      })
+    )
+  ).then(() => {
+    videos.forEach(video => {
+      video.play();
+      video.playbackRate = 1.0;
+      video.addEventListener('play', () => videos.forEach(v => v.play()));
+      video.addEventListener('pause', () => videos.forEach(v => v.pause()));
+      video.addEventListener('timeupdate', syncVideos);
+    });
+  });
+</script>
+
+
+
 <br>
 <!DOCTYPE html>
 <html lang="en">
