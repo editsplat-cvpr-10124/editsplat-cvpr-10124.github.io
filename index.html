@@ -951,11 +951,11 @@ figcaption {
   }
     /* 컨테이너 스타일 */
     #video-compare-container {
+      display: inline-block;
+      line-height: 0;
       position: relative;
       width: 100%;
-      max-width: 1300px; /* 원하는 최대 크기 */
-      margin: 10px auto; /* 비디오 슬라이더를 중앙 정렬 */
-      overflow: hidden;
+      padding-top: 52.3%;
       border-radius: 10px; /* 모서리 둥글게 */
       background: black; /* 배경색 */
     }
@@ -1000,12 +1000,12 @@ figcaption {
                         <div id="video-compare-container">
                           <!-- 왼쪽 비디오 -->
                           <video id="left-video" loop autoplay onclick="video_click()">
-                            <source src="bonsai_snowy_DGE.mp4" type="video/mp4">
+                            <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
                           </video>
                           <div id="slider-bar"> 
                           <!-- 오른쪽 비디오 -->
                           <video id="right-video" loop autoplay onclick="video_click()">
-                            <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
+                            <source src="bonsai_snowy_DGE.mp4" type="video/mp4">
                           </video>
                       </div>  
                 </div>
@@ -1044,18 +1044,14 @@ clippedVideo = videoClipper.getElementsByTagName("video")[0];
       if (position <= 100) {
         videoClipper.style.width = position + "%";
         clippedVideo.style.width = ((100 / position) * 100) + "%";
-        clippedVideo.style.zIndex = 3;
+        clippedVideo.style.setProperty("clip-path", `inset(0 ${50 - position}% 0 0)`) ;
+        clippedVideo.style.zIndex = 2;
       }
     }
     videoContainer.addEventListener("mousemove", trackLocation, false);
     videoContainer.addEventListener("touchstart", trackLocation, false);
     videoContainer.addEventListener("touchmove", trackLocation, false);
 
-  // 왼쪽 비디오의 clip-path 업데이트
-  clippedVideo.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
-
-  // 슬라이더 바의 위치 업데이트
-  videoClipper.style.left = `${position}%`;
 
 // 초기화 및 이벤트 리스너 등록
 videoContainer.addEventListener("mousemove", trackLocation, { passive: false });
