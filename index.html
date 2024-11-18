@@ -199,7 +199,7 @@
 
 .left-video-wrapper3 {
   flex: 0 1 calc(30% - 0px);
-  max-width: calc(20% - 0px);
+  max-width: calc(21% - 0px);
   border-right: 3px dotted #5a5a5a; /* 땡땡땡 실선, 색상은 연한 회색 */
   padding-right: 50px; /* 비디오와 경계선 사이 간격 */
   margin-right: 3px; /* 비디오와 경계선 간격 */
@@ -278,7 +278,7 @@ figcaption {
           <source src="././static/RENDERING_RESULTS/bear_boar.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Turn the bear statue into wild boar" </strong>
+          <strong> "Turn the bear statue into  <span style='color: #0253c5;'>wild boar</span>" </strong>
       </figcaption>
     </figure>
 
@@ -288,7 +288,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/bear_polar.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Turn the bear statue into a polar bear" </strong>
+          <strong> "Turn the bear statue into a <span style='color: #0253c5;'>polar bear</span>" </strong>
       </figcaption>
     </figure>
 
@@ -298,7 +298,7 @@ figcaption {
           <source src="././static/RENDERING_RESULTS/bear_robot.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Turn the bear statue into a metallic robot" </strong>
+          <strong> "Turn the bear statue into a <span style='color: #0253c5;'> metallic robot</span>" </strong>
       </figcaption>
     </figure>
 
@@ -314,7 +314,7 @@ figcaption {
 
     const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
     videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
+      if (Math.abs(video.currentTime - masterTime) > 0.1) {
         video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
       }
     });
@@ -359,7 +359,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/bicycle_autumn.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Make it autumn" </strong>
+          <strong> "Make it <span style='color: #0253c5;'>autumn</span>" </strong>
       </figcaption>
     </figure>
 
@@ -370,7 +370,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/bicycle_desert.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Turn the ground into a namibian desert" </strong>
+          <strong> "Turn the ground into a <span style='color: #0253c5;'>namibian desert</span>" </strong>
       </figcaption>
     </figure>
 
@@ -381,7 +381,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/bicycle_watercolor.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Make the entire scene look as if it's painted in watercolor style" </strong>
+          <strong> "Make the entire scene look as if it's painted in <span style='color: #0253c5;'>watercolor style</span>" </strong>
       </figcaption>
     </figure>
 
@@ -400,7 +400,7 @@ figcaption {
 
     const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
     videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
+      if (Math.abs(video.currentTime - masterTime) > 0.1) {
         video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
       }
     });
@@ -445,7 +445,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/bonsai_paper.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Change the bonsai to look like it's made of paper, folded intricate origami shapes" </strong>
+          <strong> "Change the bonsai to look like it's made of <span style='color: #0253c5;'>paper, folded intricate origami shapes</span>" </strong>
       </figcaption>
     </figure>
 
@@ -456,7 +456,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/bonsai_autumn.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Change the bonsai flowers into autumn leaves" </strong>
+          <strong> "Change the bonsai flowers into <span style='color: #0253c5;'>autumn leaves</span>" </strong>
       </figcaption>
     </figure>
 
@@ -467,7 +467,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Make the bonsai snowy" </strong>
+          <strong> "Make the bonsai <span style='color: #0253c5;'>snowy</span>" </strong>
       </figcaption>
     </figure>
  
@@ -493,21 +493,21 @@ figcaption {
         <video class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/face_harry.mp4" type="video/mp4">
         </video>
-        <figcaption> <strong> "Turn him into Harry Potter" </strong> </figcaption>
+        <figcaption> <strong> "Turn him into <span style='color: #0253c5;'>Harry Potter</span>" </strong> </figcaption>
       </figure>
 
       <figure class="video-wrapper">
         <video class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/face_marble.mp4" type="video/mp4">
         </video>
-        <figcaption> <strong> "Make his face resemble a marble sculpture" </strong> </figcaption>
+        <figcaption> <strong> "Make his face resemble a <span style='color: #0253c5;'>marble sculpture</span>" </strong> </figcaption>
       </figure>
 
       <figure class="video-wrapper">
         <video class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/face_paper.mp4" type="video/mp4">
         </video>
-        <figcaption> <strong> "Make him appear like paper with folded edges" </strong> </figcaption>
+        <figcaption> <strong> "Make him appear like <span style='color: #0253c5;'>paper with folded edges</span>" </strong> </figcaption>
       </figure>
     </div>
   </div>
@@ -524,7 +524,7 @@ figcaption {
 
     const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
     videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
+      if (Math.abs(video.currentTime - masterTime) > 0.1) {
         video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
       }
     });
@@ -566,21 +566,21 @@ figcaption {
         <video id="teaser1" class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/fangzhou_gogh.mp4" type="video/mp4">
         </video>
-        <figcaption>   <strong> "Turn him into Van Gogh" </strong> </figcaption>
+        <figcaption>   <strong> "Turn him into <span style='color: #0253c5;'>Van Gogh</span>" </strong> </figcaption>
       </figure>
       <!-- 두 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser2" class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/fangzhou_steve.mp4" type="video/mp4">
         </video>
-        <figcaption>  <strong> "Turn him into Steve Jobs" </strong> </figcaption>
+        <figcaption>  <strong> "Turn him into <span style='color: #0253c5;'>Steve Jobs</span>" </strong> </figcaption>
       </figure>
       <!-- 세 번째 비디오 -->
       <figure class="video-wrapper">
         <video id="teaser3" class="sync-video" autoplay muted loop playsinline>
           <source src="./static/RENDERING_RESULTS/fangzhou_pixar.mp4" type="video/mp4">
         </video>
-        <figcaption>  <strong>"Turn him into a Pixar character" </strong> </figcaption>
+        <figcaption>  <strong>"Turn him into a <span style='color: #0253c5;'>Pixar character</span>" </strong> </figcaption>
       </figure>
     </div>
   </div>
@@ -598,7 +598,7 @@ figcaption {
 
     const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
     videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
+      if (Math.abs(video.currentTime - masterTime) > 0.1) {
         video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
       }
     });
@@ -644,7 +644,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/garden_autumn.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Make it autumn" </strong>
+          <strong> "Make it <span style='color: #0253c5;'>autumn</span>" </strong>
       </figcaption>
     </figure>
 
@@ -655,7 +655,7 @@ figcaption {
           <source src="static/RENDERING_RESULTS/garden_foggy.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Make the scene look foggy" </strong>
+          <strong> "Make the scene look <span style='color: #0253c5;'>foggy</span>" </strong>
       </figcaption>
     </figure>
    
@@ -666,7 +666,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/garden_underwater.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Make the scene appear as though it's underwater" </strong>
+          <strong> "Make the scene appear as though it's <span style='color: #0253c5;'>underwater</span>" </strong>
       </figcaption>
     </figure>
 
@@ -683,7 +683,7 @@ figcaption {
 
     const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
     videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
+      if (Math.abs(video.currentTime - masterTime) > 0.1) {
         video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
       }
     });
@@ -728,7 +728,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/person_suit.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Make him wear a suit" </strong>
+          <strong> "Make him wear a <span style='color: #0253c5;'>suit</span>" </strong>
         </figcaption>
       </figure>
 
@@ -738,7 +738,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/person_minecraft.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Turn him into a Minecraft character" </strong>
+          <strong> "Turn him into a <span style='color: #0253c5;'>Minecraft character</span>" </strong>
         </figcaption>
       </figure>
 
@@ -748,7 +748,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/person_robot.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Turn him into a robot" </strong>
+          <strong> "Turn him into a <span style='color: #0253c5;'>robot</span>" </strong>
         </figcaption>
       </figure>
     </div>
@@ -766,7 +766,7 @@ figcaption {
 
     const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
     videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
+      if (Math.abs(video.currentTime - masterTime) > 0.1) {
         video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
       }
     });
@@ -810,7 +810,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/stone_horse_jade.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Turn the horse statue into a jade carving" </strong>
+          <strong> "Turn the horse statue into a  <span style='color: #0253c5;'>jade carving</span>" </strong>
       </figcaption>
     </figure>
 
@@ -820,7 +820,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/stone_horse_wooden_carving.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Turn the horse statue into a wooden carving" </strong>
+          <strong> "Turn the horse statue into a  <span style='color: #0253c5;'>wooden carving</span>" </strong>
       </figcaption>
     </figure>
 
@@ -831,7 +831,7 @@ figcaption {
           <source src="./static/RENDERING_RESULTS/stone_horse_robot.mp4" type="video/mp4">
         </video>
         <figcaption style="text-align: center; font-style: italic; margin-top: 1px;">
-          <strong> "Make the stone horse appear as a metallic robot horse" </strong>
+          <strong> "Make the stone horse appear as a  <span style='color: #0253c5;'>metallic robot horse</span>" </strong>
       </figcaption>
     </figure>
 
@@ -853,7 +853,7 @@ figcaption {
 
     const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
     videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.05) {
+      if (Math.abs(video.currentTime - masterTime) > 0.1) {
         video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
       }
     });
