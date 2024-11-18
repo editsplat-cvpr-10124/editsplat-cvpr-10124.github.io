@@ -1,9 +1,4 @@
 
-body {
-  background: #fff;
-  margin: 2rem;
-}
-
 #video-compare-container {
   display: inline-block;
   line-height: 0;
@@ -11,24 +6,24 @@ body {
   width: 100%;
   padding-top: 42.3%;
 }
-
 #video-compare-container > video {
   width: 100%;
-  position: relative;
-  top: 0;
-  height: 100%;
+  position: absolute;
+  top: 0; height: 100%;
 }
-
 #video-clipper {
-  width: 50%;
-  position: relative;
-  top: 0;
-  bottom: 0;
+  width: 50%; position: absolute;
+  top: 0; bottom: 0;
   overflow: hidden;
 }
-
 #video-clipper video {
   width: 200%;
-  position: relative;
+  postion: absolute;
   height: 100%;
+}
+
+#videoPlay{
+    padding: 40px;
+    margin: 40px auto;
+    display:block
 }
