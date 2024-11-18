@@ -925,51 +925,63 @@ figcaption {
   </div>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Comparison</title>
-  <!-- CSS 파일 연결 -->
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <section class="section" style="padding: 0;">
-    <div class="container" style="display: flex; justify-content: center; margin-top: 50px; ">
+  <br>
 
-        <div
-            style="background-color: rgb(235, 235, 235);  padding: 20px; width: 80%; display: inline-block;border-radius: 20px;">
-            <!-- <h3 class="title is-3" style="text-align: center;">'A Corgi'</h3> -->
+  <div style="display: flex; justify-content: space-around; gap: 15px;">
 
-            <div class="columns is-centered">
-
-                <div class="column">
-                    <div class="content">
-                        <div class="col-md-8 col-md-offset-2">
-                            <h3 class="title is-5"  style="font-family: 'Kalam', cursive; text-align: center; margin-bottom: 10px;"> 
-                              "Turn the horse statue into a<span style='color: #0253c5;'> wooden carving</span>" </h3>
-                            <div
-                                style="display: flex; justify-content: space-between; margin-bottom: -25px; padding: 0px 0;">
-                                <span> <strong>DGE</strong></span>
-                                <span><strong>Ours</strong></span>
-                            </div>
-                            <div class="video-compare-container" id="plaidDiv" style="padding: 0;">
-                                <video class="video" id="plaid" loop="" playsinline="" autoplay="" muted=""
-                                    src="static/videos/SuppMat/Fig4. Results/face/a red buffalo plaid shirt/both.mp4"
-                                    onplay="resizeAndPlay(this, 0.45)" style="height: 0px;"></video>
-
-                                <canvas height="500" class="videoMerge" id="plaidMerge" width="500"></canvas>
-                            </div>
+    <!-- 첫 번째 블록 -->
+    <div
+        style="background-color: rgb(235, 235, 235); padding: 20px; width: 45%; display: inline-block; border-radius: 20px;">
+        <div class="columns is-centered">
+            <div class="column">
+                <div class="content">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h3 class="title is-5" style="font-family: 'Kalam', cursive; text-align: center; margin-bottom: 10px;"> 
+                          "Make his face resemble that of a <span style='color: #0253c5;'> marble sculpture</span>" 
+                        </h3>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: -25px; padding: 0px 0;">
+                            <span> <strong>DGE</strong></span>
+                            <span><strong>Ours</strong></span>
+                        </div>
+                        <div class="video-compare-container" id="plaidDiv" style="padding: 0;">
+                            <video class="video" id="plaid" loop="" playsinline="" autoplay="" muted=""
+                                src="static/videos/SuppMat/Fig4. Results/face/a red buffalo plaid shirt/both.mp4"
+                                onplay="resizeAndPlay(this, 0.45)" style="height: 0px;"></video>
+                            <canvas height="500" class="videoMerge" id="plaidMerge" width="500"></canvas>
                         </div>
                     </div>
                 </div>
- 
-  <!-- JavaScript 파일 연결 -->
-  <script src="js/script.js"></script>
-</body>
-</html>
+            </div>
+        </div>
+    </div>
 
+    <!-- 두 번째 블록 -->
+    <div
+        style="background-color: rgb(235, 235, 235); padding: 20px; width: 55%; display: inline-block; border-radius: 20px;">
+        <div class="columns is-centered">
+            <div class="column">
+                <div class="content">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h3 class="title is-5" style="font-family: 'Kalam', cursive; text-align: center; margin-bottom: 10px;"> 
+                          "Turn his face into a <span style='color: #ff6f61;'> smiling sculpture</span>" 
+                        </h3>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: -25px; padding: 0px 0;">
+                            <span> <strong>DGE</strong></span>
+                            <span><strong>Ours</strong></span>
+                        </div>
+                        <div class="video-compare-container" id="smileDiv" style="padding: 0;">
+                            <video class="video" id="smile" loop="" playsinline="" autoplay="" muted=""
+                                src="static/videos/SuppMat/Fig4. Results/face/a smiling sculpture/both.mp4"
+                                onplay="resizeAndPlay(this, 0.45)" style="height: 0px;"></video>
+                            <canvas height="500" class="videoMerge" id="smileMerge" width="500"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 
 <br>
