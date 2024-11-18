@@ -942,81 +942,103 @@ figcaption {
   <style>
     /* 특정 블록에만 스타일 적용 */
     #custom-video-block {
-    background-color: rgb(235, 235, 235);
-    padding: 30px;
-    width: 90%;
-    border-radius: 20px;
-    margin: 20px auto; /* 블록을 중앙으로 정렬 */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
-  }
+      background-color: rgb(235, 235, 235);
+      padding: 30px;
+      width: 90%;
+      border-radius: 20px;
+      margin: 20px auto; /* 블록을 중앙으로 정렬 */
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    }
+
     /* 컨테이너 스타일 */
     #video-compare-container {
       display: inline-block;
       line-height: 0;
       position: relative;
       width: 100%;
-      padding-top: 52.3%;
+      padding-top: 52.3%; /* 비율 유지 */
       border-radius: 10px; /* 모서리 둥글게 */
       background: black; /* 배경색 */
-    }
-    
-    #video-compare-container > video {
-      width: 100%;
-      position: absolute;
-      top: 0;
-      height: 100%;
-    }
-
-    /* 슬라이더 경계선 */
-    #slider-bar {
-      width: 50%;
-      position: absolute;
-      top: 0;
-      bottom: 0;
       overflow: hidden;
+    }
 
-  }
-  #slider-bar video {
-      width: 200%;
+    #video-compare-container > video {
       position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
+      object-fit: cover;
+    }
+
+    /* 오른쪽 비디오를 잘라낼 영역 */
+    #slider-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      clip-path: inset(0 50% 0 0); /* 초기값 */
+    }
+
+    #slider-bar video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 슬라이더 중앙선 */
+    #slider-divider {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 3px;
+      height: 100%;
+      background-color: white; /* 선 색상 */
+      transform: translateX(-50%);
+      z-index: 3;
     }
   </style>
 </head>
 <body>
   <div id="custom-video-block">
-        <div class="columns is-centered">
-            <div class="column">
-                <div class="content">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h3 class="title is-5" style="font-family: 'Kalam', cursive; text-align: center; font-size: 25px; margin-bottom: 10px;"> 
-                          "Make the bonsai <span style='color: #0253c5;'> snowy</span>" 
-                        </h3>
-                        <div style="display: flex; justify-content: space-between; text-align: center; font-size: 20px; margin-bottom: 10px; padding: 5 5;">
-                            <span> <strong>DGE</strong></span>
-                            <span><strong>Ours</strong></span>
-                        </div>
-                        <!-- 비디오 비교 슬라이더 -->
-                        <div id="video-compare-container">
-                          <!-- 왼쪽 비디오 -->
-                          <video id="left-video" loop autoplay onclick="video_click()">
-                            <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
-                          </video>
-                          <div id="slider-bar"> 
-                          <!-- 오른쪽 비디오 -->
-                          <video id="right-video" loop autoplay onclick="video_click()">
-                            <source src="bonsai_snowy_DGE.mp4" type="video/mp4">
-                          </video>
-                      </div>  
-                </div>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <div class="col-md-8 col-md-offset-2">
+            <h3 class="title is-5" style="font-family: 'Kalam', cursive; text-align: center; font-size: 25px; margin-bottom: 10px;">
+              "Make the bonsai <span style="color: #0253c5;">snowy</span>"
+            </h3>
+            <div style="display: flex; justify-content: space-between; text-align: center; font-size: 20px; margin-bottom: 10px; padding: 5px;">
+              <span><strong>DGE</strong></span>
+              <span><strong>Ours</strong></span>
             </div>
+            <!-- 비디오 비교 슬라이더 -->
+            <div id="video-compare-container">
+              <!-- 왼쪽 비디오 -->
+              <video id="left-video" loop autoplay onclick="video_click()">
+                <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
+              </video>
+              <!-- 오른쪽 비디오 -->
+              <div id="slider-bar">
+                <video id="right-video" loop autoplay onclick="video_click()">
+                  <source src="bonsai_snowy_DGE.mp4" type="video/mp4">
+                </video>
+              </div>
+              <!-- 중앙선 -->
+              <div id="slider-divider"></div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 
-<script>
-  var v = document.getElementById("left-video");
+  <script>
+     var v = document.getElementById("left-video");
     var v2 = document.getElementById("right-video");
 
     function video_click() {
@@ -1033,33 +1055,37 @@ figcaption {
       v.currentTime=v2.currentTime;
       v2.currentTime=v.currentTime;
     }
+
     // 비디오 컨테이너 및 클리퍼 가져오기
-var videoContainer = document.getElementById("video-compare-container");
-videoClipper = document.getElementById("slider-bar"); // 슬라이더 바 가져오기
-clippedVideo = videoClipper.getElementsByTagName("video")[0];
+    var videoContainer = document.getElementById("video-compare-container");
+    var sliderBar = document.getElementById("slider-bar");
+    var sliderDivider = document.getElementById("slider-divider");
 
     function trackLocation(e) {
-      var rect = videoContainer.getBoundingClientRect(),
-        position = ((e.pageX - rect.left) / videoContainer.offsetWidth) * 100;
-      if (position <= 100) {
-        videoClipper.style.width = position + "%";
-        clippedVideo.style.width = ((100 / position) * 100) + "%";
-        clippedVideo.style.setProperty("clip-path", `inset(0 ${50 - position}% 0 0)`) ;
-        clippedVideo.style.zIndex = 2;
+      var rect = videoContainer.getBoundingClientRect();
+      var xPos = e.type.startsWith("touch")
+        ? e.touches[0].clientX
+        : e.clientX; // 터치 이벤트 대응
+
+      var position = ((xPos - rect.left) / videoContainer.offsetWidth) * 100;
+
+      if (position >= 0 && position <= 100) {
+        sliderBar.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+        sliderDivider.style.left = position + "%";
       }
     }
+
+    // 초기화
+    window.onload = function () {
+      sliderBar.style.clipPath = "inset(0 50% 0 0)"; // 초기 슬라이더 위치
+      sliderDivider.style.left = "50%";
+    };
+
+    // 이벤트 리스너 등록
     videoContainer.addEventListener("mousemove", trackLocation, false);
     videoContainer.addEventListener("touchstart", trackLocation, false);
     videoContainer.addEventListener("touchmove", trackLocation, false);
-
-
-// 초기화 및 이벤트 리스너 등록
-videoContainer.addEventListener("mousemove", trackLocation, { passive: false });
-videoContainer.addEventListener("touchstart", trackLocation, { passive: false });
-videoContainer.addEventListener("touchmove", trackLocation, { passive: false });
-
-
-</script>
+  </script>
 </body>
 </html>
 
