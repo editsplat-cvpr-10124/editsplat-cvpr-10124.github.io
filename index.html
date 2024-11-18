@@ -925,7 +925,13 @@ figcaption {
   </div>
 
 
-<br>
+<br><br><br><br>
+
+<body>
+  <h2 class="subtitle" style="font-family: 'Kalam', cursive; text-align: center; font-size: 1.2em;">
+    You can stop videos and watch static images by video clicking.
+  </h2>
+</body>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -954,39 +960,27 @@ figcaption {
       background: black; /* 배경색 */
     }
     
-    /* 왼쪽 비디오 */
-    #left-video {
+    #video-compare-container > video {
+      width: 100%;
       position: absolute;
       top: 0;
-      left: 0;
-      width: 100%;
       height: 100%;
-      object-fit: cover; /* 비율 유지 */
-      clip-path: inset(0 50% 0 0); /* 오른쪽 50% 숨김 */
-      z-index: 2; /* 오른쪽 비디오 위에 표시 */
     }
 
-    /* 오른쪽 비디오 */
-    #right-video {
+    /* 슬라이더 경계선 */
+    #slider-bar {
+      width: 50%;
       position: absolute;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* 비율 유지 */
-      z-index: 1;
-    }
-      /* 슬라이더 경계선 */
-   #slider-bar {
-    position: absolute;
-    top: 0;
-    left: 50%; /* 초기 위치 중앙 */
-    width: 1px; /* 선의 두께 */
-    height: 100%;
-    background-color: white; /* 선 색상 */
-    z-index: 3;
-    pointer-events: none; /* 슬라이더로 인해 이벤트가 막히지 않도록 설정 */
+      bottom: 0;
+      overflow: hidden;
+
   }
+  #slider-bar video {
+      width: 200%;
+      position: absolute;
+      height: 100%;
+    }
   </style>
 </head>
 <body>
@@ -1005,52 +999,77 @@ figcaption {
                         <!-- 비디오 비교 슬라이더 -->
                         <div id="video-compare-container">
                           <!-- 왼쪽 비디오 -->
-                          <video id="left-video"  class="sync-video"  autoplay loop muted>
+                          <video id="left-video" loop autoplay onclick="video_click()">
                             <source src="bonsai_snowy_DGE.mp4" type="video/mp4">
                           </video>
-
+                          <div id="slider-bar"> 
                           <!-- 오른쪽 비디오 -->
-                          <video id="right-video"  class="sync-video"  autoplay loop muted>
+                          <video id="right-video" loop autoplay onclick="video_click()">
                             <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
                           </video>
-
-                           <!-- 슬라이더 경계선 -->
-                          <div id="slider-bar"></div>
-                        </div>
-                    </div>
+                      </div>  
                 </div>
             </div>
         </div>
   </div>
 </div>
-  <script>
-    // 비디오 컨테이너 및 클리퍼 가져오기
-    const videoContainer = document.getElementById("video-compare-container");
-    const leftVideo = document.getElementById("left-video");
+</div>
 
-    // 슬라이더 위치 업데이트 함수
-    function trackLocation(e) {
-      const rect = videoContainer.getBoundingClientRect();
-      let position = ((e.clientX - rect.left) / rect.width) * 100;
+<script>
+  var v = document.getElementById("left-video");
+    var v2 = document.getElementById("right-video");
 
-      // 슬라이더 위치를 0% ~ 100%로 제한
-      position = Math.max(0, Math.min(100, position));
-
-      // 왼쪽 비디오의 clip-path 업데이트
-      leftVideo.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+    function video_click() {
+      if (v.paused){
+       v.play();
+       v2.play(); 
+      }
+      else{
+        v.pause();
+        v2.pause();
+      }
+      // v.paused ? v.play() : v.pause();
+      // v2.paused ? v2.play() : v2.pause();
+      v.currentTime=v2.currentTime;
+      v2.currentTime=v.currentTime;
     }
+    // 비디오 컨테이너 및 클리퍼 가져오기
+var videoContainer = document.getElementById("video-compare-container");
+videoClipper = document.getElementById("slider-bar"); // 슬라이더 바 가져오기
+clippedVideo = videoClipper.getElementsByTagName("video")[0];
 
-    // 초기화 및 이벤트 리스너 등록
+    function trackLocation(e) {
+      var rect = videoContainer.getBoundingClientRect(),
+        position = ((e.pageX - rect.left) / videoContainer.offsetWidth) * 100;
+      if (position <= 100) {
+        videoClipper.style.width = position + "%";
+        clippedVideo.style.width = ((100 / position) * 100) + "%";
+        clippedVideo.style.zIndex = 3;
+      }
+    }
     videoContainer.addEventListener("mousemove", trackLocation, false);
     videoContainer.addEventListener("touchstart", trackLocation, false);
     videoContainer.addEventListener("touchmove", trackLocation, false);
-  </script>
+
+  // 왼쪽 비디오의 clip-path 업데이트
+  clippedVideo.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+
+  // 슬라이더 바의 위치 업데이트
+  videoClipper.style.left = `${position}%`;
+
+// 초기화 및 이벤트 리스너 등록
+videoContainer.addEventListener("mousemove", trackLocation, { passive: false });
+videoContainer.addEventListener("touchstart", trackLocation, { passive: false });
+videoContainer.addEventListener("touchmove", trackLocation, { passive: false });
+
+
+</script>
 </body>
 </html>
 
 
 <br><br>
-    <!-- 두 번째 블록 -->
+    <!-- 다른 예제 -->
     <div id="custom-video-block">
       <div class="columns is-centered">
           <div class="column">
