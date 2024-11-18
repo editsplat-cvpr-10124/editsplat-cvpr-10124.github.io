@@ -26,4 +26,18 @@ btn.addEventListener('click',function(){
   video2.play();
 },false);
 
+const videoContainer = document.getElementById("video-compare-container");
+const videoClipper = document.getElementById("video-clipper");
+
+videoContainer.addEventListener("mousemove", (e) => {
+  const rect = videoContainer.getBoundingClientRect();
+  const position = ((e.clientX - rect.left) / rect.width) * 100;
+
+  // 슬라이더 위치 제한 (0% ~ 100%)
+  const adjustedPosition = Math.max(0, Math.min(100, position));
+
+  // 슬라이더 위치 업데이트
+  videoClipper.style.width = `${adjustedPosition}%`;
+});
+
 

@@ -83,4 +83,3 @@ btn.addEventListener('click',function(){
   video2.play();
 },false);
 
-

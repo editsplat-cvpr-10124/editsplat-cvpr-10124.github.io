@@ -925,36 +925,110 @@ figcaption {
   </div>
 
 
-  <br>
+<br>
 
-  <div style="display: flex; justify-content: space-around; gap: 15px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparison Slider</title>
+  <style>
+    /* 컨테이너 스타일 */
+    #video-compare-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px; /* 원하는 최대 크기 */
+      aspect-ratio: 16 / 9; /* 16:9 비율 */
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 10px; /* 모서리 둥글게 */
+      background: black; /* 배경색 */
+    }
 
-    <!-- 첫 번째 블록 -->
-    <div
-        style="background-color: rgb(235, 235, 235); padding: 20px; width: 45%; display: inline-block; border-radius: 20px;">
+    /* 왼쪽 비디오 */
+    #left-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 비율 유지 */
+      clip-path: inset(0 50% 0 0); /* 오른쪽 50% 숨김 */
+      z-index: 2; /* 오른쪽 비디오 위에 표시 */
+    }
+
+    /* 오른쪽 비디오 */
+    #right-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 비율 유지 */
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div
+        style="background-color: rgb(235, 235, 235); padding: 20px; width: 90%; display: inline-block; border-radius: 20px;">
         <div class="columns is-centered">
             <div class="column">
                 <div class="content">
                     <div class="col-md-8 col-md-offset-2">
                         <h3 class="title is-5" style="font-family: 'Kalam', cursive; text-align: center; margin-bottom: 10px;"> 
-                          "Make his face resemble that of a <span style='color: #0253c5;'> marble sculpture</span>" 
+                          "Make the bonsai <span style='color: #0253c5;'> snowy</span>" 
                         </h3>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: -25px; padding: 0px 0;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; padding: 0px 0;">
                             <span> <strong>DGE</strong></span>
                             <span><strong>Ours</strong></span>
                         </div>
-                        <div class="video-compare-container" id="plaidDiv" style="padding: 0;">
-                            <video class="video" id="plaid" loop="" playsinline="" autoplay="" muted=""
-                                src="static/videos/SuppMat/Fig4. Results/face/a red buffalo plaid shirt/both.mp4"
-                                onplay="resizeAndPlay(this, 0.45)" style="height: 0px;"></video>
-                            <canvas height="500" class="videoMerge" id="plaidMerge" width="500"></canvas>
+                        <!-- 비디오 비교 슬라이더 -->
+                        <div id="video-compare-container">
+                          <!-- 왼쪽 비디오 -->
+                          <video id="left-video"  class="sync-video"  autoplay loop muted>
+                            <source src="static/RENDERING_RESULTS/bear_polar.mp4" type="video/mp4">
+                          </video>
+
+                          <!-- 오른쪽 비디오 -->
+                          <video id="right-video"  class="sync-video"  autoplay loop muted>
+                            <source src="static/RENDERING_RESULTS/bear_boar.mp4" type="video/mp4">
+                          </video>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+  </div>
 
+  <script>
+    // 비디오 컨테이너 및 클리퍼 가져오기
+    const videoContainer = document.getElementById("video-compare-container");
+    const leftVideo = document.getElementById("left-video");
+
+    // 슬라이더 위치 업데이트 함수
+    function trackLocation(e) {
+      const rect = videoContainer.getBoundingClientRect();
+      let position = ((e.clientX - rect.left) / rect.width) * 100;
+
+      // 슬라이더 위치를 0% ~ 100%로 제한
+      position = Math.max(0, Math.min(100, position));
+
+      // 왼쪽 비디오의 clip-path 업데이트
+      leftVideo.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+    }
+
+    // 초기화 및 이벤트 리스너 등록
+    videoContainer.addEventListener("mousemove", trackLocation, false);
+    videoContainer.addEventListener("touchstart", trackLocation, false);
+    videoContainer.addEventListener("touchmove", trackLocation, false);
+  </script>
+</body>
+</html>
+
+
+<br><br>
     <!-- 두 번째 블록 -->
     <div
         style="background-color: rgb(235, 235, 235); padding: 20px; width: 55%; display: inline-block; border-radius: 20px;">
