@@ -976,6 +976,17 @@ figcaption {
       object-fit: cover; /* 비율 유지 */
       z-index: 1;
     }
+      /* 슬라이더 경계선 */
+   #slider-bar {
+    position: absolute;
+    top: 0;
+    left: 50%; /* 초기 위치 중앙 */
+    width: 1px; /* 선의 두께 */
+    height: 100%;
+    background-color: white; /* 선 색상 */
+    z-index: 3;
+    pointer-events: none; /* 슬라이더로 인해 이벤트가 막히지 않도록 설정 */
+  }
   </style>
 </head>
 <body>
@@ -1004,6 +1015,9 @@ figcaption {
                           <video id="right-video"  class="sync-video"  autoplay loop muted>
                             <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
                           </video>
+
+                           <!-- 슬라이더 경계선 -->
+                          <div id="slider-bar"></div>
                         </div>
                     </div>
                 </div>
