@@ -934,18 +934,26 @@ figcaption {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comparison Slider</title>
   <style>
+    /* 특정 블록에만 스타일 적용 */
+    #custom-video-block {
+    background-color: rgb(235, 235, 235);
+    padding: 20px;
+    width: 90%;
+    border-radius: 20px;
+    margin: 20px auto; /* 블록을 중앙으로 정렬 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  }
     /* 컨테이너 스타일 */
     #video-compare-container {
       position: relative;
       width: 100%;
-      max-width: 800px; /* 원하는 최대 크기 */
-      aspect-ratio: 16 / 9; /* 16:9 비율 */
-      margin: 0 auto;
+      max-width: 1300px; /* 원하는 최대 크기 */
+      margin: 10px auto; /* 비디오 슬라이더를 중앙 정렬 */
       overflow: hidden;
       border-radius: 10px; /* 모서리 둥글게 */
       background: black; /* 배경색 */
     }
-
+    
     /* 왼쪽 비디오 */
     #left-video {
       position: absolute;
@@ -971,6 +979,7 @@ figcaption {
   </style>
 </head>
 <body>
+  <div id="custom-video-block">
   <div
         style="background-color: rgb(235, 235, 235); padding: 20px; width: 90%; display: inline-block; border-radius: 20px;">
         <div class="columns is-centered">
@@ -980,7 +989,7 @@ figcaption {
                         <h3 class="title is-5" style="font-family: 'Kalam', cursive; text-align: center; margin-bottom: 10px;"> 
                           "Make the bonsai <span style='color: #0253c5;'> snowy</span>" 
                         </h3>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; padding: 0px 0;">
+                        <div style="display: flex; justify-content: space-between; text-align: center; margin-bottom: 10px; padding: 0 0;">
                             <span> <strong>DGE</strong></span>
                             <span><strong>Ours</strong></span>
                         </div>
@@ -988,12 +997,12 @@ figcaption {
                         <div id="video-compare-container">
                           <!-- 왼쪽 비디오 -->
                           <video id="left-video"  class="sync-video"  autoplay loop muted>
-                            <source src="static/RENDERING_RESULTS/bear_polar.mp4" type="video/mp4">
+                            <source src="bonsai_snowy_DGE.mp4" type="video/mp4">
                           </video>
 
                           <!-- 오른쪽 비디오 -->
                           <video id="right-video"  class="sync-video"  autoplay loop muted>
-                            <source src="static/RENDERING_RESULTS/bear_boar.mp4" type="video/mp4">
+                            <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
                           </video>
                         </div>
                     </div>
@@ -1001,7 +1010,7 @@ figcaption {
             </div>
         </div>
   </div>
-
+</div>
   <script>
     // 비디오 컨테이너 및 클리퍼 가져오기
     const videoContainer = document.getElementById("video-compare-container");
