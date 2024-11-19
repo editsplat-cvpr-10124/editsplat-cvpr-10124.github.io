@@ -940,29 +940,27 @@ figcaption {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comparison Slider</title>
   <style>
-    /* 특정 블록에만 스타일 적용 */
-    #custom-video-block {
+    .custom-video-block {
       background-color: rgb(235, 235, 235);
       padding: 30px;
       width: 90%;
       border-radius: 20px;
-      margin: 20px auto; /* 블록을 중앙으로 정렬 */
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+      margin: 20px auto;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     }
 
-    /* 컨테이너 스타일 */
-    #video-compare-container {
+    .video-compare-container {
       display: inline-block;
       line-height: 0;
       position: relative;
       width: 100%;
-      padding-top: 52.3%; /* 비율 유지 */
-      border-radius: 10px; /* 모서리 둥글게 */
-      background: black; /* 배경색 */
+      padding-top: 52.3%;
+      border-radius: 10px;
+      background: black;
       overflow: hidden;
     }
 
-    #video-compare-container > video {
+    .video-compare-container > video {
       position: absolute;
       top: 0;
       left: 0;
@@ -971,17 +969,16 @@ figcaption {
       object-fit: cover;
     }
 
-    /* 오른쪽 비디오를 잘라낼 영역 */
-    #slider-bar {
+    .slider-bar {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      clip-path: inset(0 50% 0 0); /* 초기값 */
+      clip-path: inset(0 50% 0 0);
     }
 
-    #slider-bar video {
+    .slider-bar video {
       position: absolute;
       top: 0;
       left: 0;
@@ -990,267 +987,96 @@ figcaption {
       object-fit: cover;
     }
 
-    /* 슬라이더 중앙선 */
-    #slider-divider {
+    .slider-divider {
       position: absolute;
       top: 0;
       left: 50%;
       width: 3px;
       height: 100%;
-      background-color: white; /* 선 색상 */
+      background-color: white;
       transform: translateX(-50%);
       z-index: 3;
-      pointer-events: none; /* 클릭 이벤트 차단 */
+      pointer-events: none;
     }
   </style>
 </head>
-
 <body>
-  
-  <div id="custom-video-block">
-      <h3 class="title is-5" style="font-family: 'Kalam', cursive; text-align: center; font-size: 25px; margin-bottom: 10px;">
-        "Make the bonsai <span style="color: #0253c5;">snowy</span>"
-      </h3>
-      <div style="display: flex; justify-content: space-between; text-align: center; font-size: 20px; margin-bottom: 10px; padding: 10px;">
-        <span><strong>DGE</strong></span>
-        <span><strong>Ours</strong></span>
-      </div>
-      <!-- 비디오 비교 슬라이더 -->
-      <div id="video-compare-container">
 
-        <!-- 왼쪽 비디오 -->
-        <video id="left-video" loop autoplay onclick="video_click()">
-          <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
+  <!-- 첫 번째 슬라이더 -->
+  <div class="custom-video-block">
+    <h3 class="title" style="font-family: 'Kalam', cursive; text-align: center; font-size: 25px; margin-bottom: 10px;">
+      "Make the bonsai <span style="color: #0253c5;">snowy</span>"
+    </h3>
+    <div class="video-compare-container" data-slider>
+      <video class="left-video" loop autoplay>
+        <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
+      </video>
+      <div class="slider-bar">
+        <div class="slider-divider"></div>
+        <video class="right-video" loop autoplay>
+          <source src="bonsai_snowy_DGE.mp4" type="video/mp4">
         </video>
-        <!-- 오른쪽 비디오 -->
-        <div id="slider-bar">
-          <!-- 중앙선 -->
-         <div id="slider-divider"></div>
-          <video id="right-video" loop autoplay onclick="video_click()">
-            <source src="bonsai_snowy_DGE.mp4" type="video/mp4">
-          </video>
-        </div>
-        
       </div>
     </div>
   </div>
- 
+
+  <!-- 두 번째 슬라이더 -->
+  <div class="custom-video-block">
+    <h3 class="title" style="font-family: 'Kalam', cursive; text-align: center; font-size: 25px; margin-bottom: 10px;">
+      <span>"테스트 중, DGE 아직 안찾음"</span>
+    </h3>
+    <div class="video-compare-container" data-slider>
+      <video class="left-video" loop autoplay>
+        <source src="static/SOURCE/stone_horse.mp4" type="video/mp4">
+      </video>
+      <div class="slider-bar">
+        <div class="slider-divider"></div>
+        <video class="right-video" loop autoplay>
+          <source src="static/RENDERING_RESULTS/stone_horse_wooden_carving.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
 
   <script>
-    var v = document.getElementById("left-video");
-    var v2 = document.getElementById("right-video");
+    // 모든 슬라이더에 대해 공통 동작 설정
+    document.querySelectorAll('[data-slider]').forEach((slider) => {
+      const leftVideo = slider.querySelector('.left-video');
+      const rightVideo = slider.querySelector('.right-video');
+      const sliderBar = slider.querySelector('.slider-bar');
+      const sliderDivider = slider.querySelector('.slider-divider');
 
-    function video_click() {
-      if (v.paused) {
-        v.play();
-        v2.play();
-      } else {
-        v.pause();
-        v2.pause();
-      }
-    }
+      // 슬라이더 동작 처리
+      slider.addEventListener('mousemove', (e) => handleSliderMove(e, slider, sliderBar, sliderDivider));
+      slider.addEventListener('touchmove', (e) => handleSliderMove(e, slider, sliderBar, sliderDivider));
 
-    window.onload = function () {
-      sliderBar.style.clipPath = "inset(0 50% 0 0)"; // 초기 슬라이더 위치
-      sliderDivider.style.left = "50%";
+      // 비디오 재생/정지 동작
+      slider.addEventListener('click', () => {
+        if (leftVideo.paused) {
+          leftVideo.play();
+          rightVideo.play();
+        } else {
+          leftVideo.pause();
+          rightVideo.pause();
+        }
+      });
+    });
 
-      // 비디오 동기화 초기화
-      v2.currentTime = v.currentTime;
-    };
-
-    // 비디오 컨테이너 및 클리퍼 가져오기
-    var videoContainer = document.getElementById("video-compare-container");
-    var sliderBar = document.getElementById("slider-bar");
-    var sliderDivider = document.getElementById("slider-divider");
-
-    function trackLocation(e) {
-      var rect = videoContainer.getBoundingClientRect();
-      var xPos = e.type.startsWith("touch")
-        ? e.touches[0].clientX
-        : e.clientX; // 터치 이벤트 대응
-
-      var position = ((xPos - rect.left) / videoContainer.offsetWidth) * 100;
+    // 슬라이더 위치 조정 함수
+    function handleSliderMove(event, slider, sliderBar, sliderDivider) {
+      const rect = slider.getBoundingClientRect();
+      const xPos = event.type.startsWith('touch') ? event.touches[0].clientX : event.clientX;
+      const position = ((xPos - rect.left) / slider.offsetWidth) * 100;
 
       if (position >= 0 && position <= 100) {
         sliderBar.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
-        sliderDivider.style.left = position + "%";
+        sliderDivider.style.left = `${position}%`;
       }
     }
-
-    // 초기화
-    window.onload = function () {
-      sliderBar.style.clipPath = "inset(0 50% 0 0)"; // 초기 슬라이더 위치
-      sliderDivider.style.left = "50%";
-    };
-
-    // 이벤트 리스너 등록
-    videoContainer.addEventListener("mousemove", trackLocation, false);
-    videoContainer.addEventListener("touchstart", trackLocation, false);
-    videoContainer.addEventListener("touchmove", trackLocation, false);
   </script>
 </body>
 </html>
 
-
-<br><br>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comparison Slider</title>
-  <style>
-    /* 특정 블록에만 스타일 적용 */
-    #custom-video-block {
-      background-color: rgb(235, 235, 235);
-      padding: 30px;
-      width: 90%;
-      border-radius: 20px;
-      margin: 20px auto; /* 블록을 중앙으로 정렬 */
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
-    }
-
-    /* 컨테이너 스타일 */
-    #video-compare-container {
-      display: inline-block;
-      line-height: 0;
-      position: relative;
-      width: 100%;
-      padding-top: 52.3%; /* 비율 유지 */
-      border-radius: 10px; /* 모서리 둥글게 */
-      background: black; /* 배경색 */
-      overflow: hidden;
-    }
-
-    #video-compare-container > video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* 오른쪽 비디오를 잘라낼 영역 */
-    #slider-bar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      clip-path: inset(0 50% 0 0); /* 초기값 */
-    }
-
-    #slider-bar video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* 슬라이더 중앙선 */
-    #slider-divider {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 3px;
-      height: 100%;
-      background-color: white; /* 선 색상 */
-      transform: translateX(-50%);
-      z-index: 3;
-      pointer-events: none; /* 클릭 이벤트 차단 */
-    }
-  </style>
-</head>
-
-<body>
-  
-  <div id="custom-video-block">
-      <h3 class="title is-5" style="font-family: 'Kalam', cursive; text-align: center; font-size: 25px; margin-bottom: 10px;">
-        "다른예제 뭐할지 test중</span>"
-      </h3>
-      <div style="display: flex; justify-content: space-between; text-align: center; font-size: 20px; margin-bottom: 10px; padding: 10px;">
-        <span><strong>DGE</strong></span>
-        <span><strong>Ours</strong></span>
-      </div>
-      <!-- 비디오 비교 슬라이더 -->
-      <div id="video-compare-container">
-
-        <!-- 왼쪽 비디오 -->
-        <video id="left-video" loop autoplay onclick="video_click()">
-          <source src="static/SOURCE/stone_horse.mp4" type="video/mp4">
-        </video>
-        <!-- 오른쪽 비디오 -->
-        <div id="slider-bar">
-          <!-- 중앙선 -->
-         <div id="slider-divider"></div>
-          <video id="right-video" loop autoplay onclick="video_click()">
-            <source src="static/RENDERING_RESULTS/stone_horse_wooden_carving.mp44" type="video/mp4">
-          </video>
-        </div>
-        
-      </div>
-    </div>
-  </div>
- 
-
-  <script>
-    var v = document.getElementById("left-video");
-    var v2 = document.getElementById("right-video");
-
-    function video_click() {
-      if (v.paused) {
-        v.play();
-        v2.play();
-      } else {
-        v.pause();
-        v2.pause();
-      }
-    }
-
-    window.onload = function () {
-      sliderBar.style.clipPath = "inset(0 50% 0 0)"; // 초기 슬라이더 위치
-      sliderDivider.style.left = "50%";
-
-      // 비디오 동기화 초기화
-      v2.currentTime = v.currentTime;
-    };
-
-    // 비디오 컨테이너 및 클리퍼 가져오기
-    var videoContainer = document.getElementById("video-compare-container");
-    var sliderBar = document.getElementById("slider-bar");
-    var sliderDivider = document.getElementById("slider-divider");
-
-    function trackLocation(e) {
-      var rect = videoContainer.getBoundingClientRect();
-      var xPos = e.type.startsWith("touch")
-        ? e.touches[0].clientX
-        : e.clientX; // 터치 이벤트 대응
-
-      var position = ((xPos - rect.left) / videoContainer.offsetWidth) * 100;
-
-      if (position >= 0 && position <= 100) {
-        sliderBar.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
-        sliderDivider.style.left = position + "%";
-      }
-    }
-
-    // 초기화
-    window.onload = function () {
-      sliderBar.style.clipPath = "inset(0 50% 0 0)"; // 초기 슬라이더 위치
-      sliderDivider.style.left = "50%";
-    };
-
-    // 이벤트 리스너 등록
-    videoContainer.addEventListener("mousemove", trackLocation, false);
-    videoContainer.addEventListener("touchstart", trackLocation, false);
-    videoContainer.addEventListener("touchmove", trackLocation, false);
-  </script>
-</body>
-</html>
 
 
 <br>
