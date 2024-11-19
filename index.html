@@ -60,7 +60,7 @@
             
             <div class="publication-links">
               <!-- PDF Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -68,8 +68,8 @@
                   </span>
                   <span>Paper</span>
                 </a>
-              </span>
-              <span class="link-block">
+              </span> -->
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -77,7 +77,7 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Video Link. -->
               <span class="link-block">
                 <a href=""
@@ -89,7 +89,7 @@
                 </a>
               </span>
               <!-- Code Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -97,16 +97,16 @@
                   </span>
                   <span>Code</span>
                   </a>
-              </span>
+              </span> -->
               <!-- Dataset Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
-                  </a>
+                  </a> -->
             </div>
 
           </div>
@@ -148,9 +148,7 @@
         <div class="column" style="width: 80%; padding: 0;">
             <h2 class="title is-3"> Abstract </h2>
             <div class="content has-text-justified">
-                Recent advancements in 3D editing have highlighted the potential of text-driven methods in real-time, user-friendly AR/VR applications. However, current methods rely on 2D diffusion models without adequately considering multi-view information, resulting in multi-view inconsistency. While 3D Gaussian Splatting (3DGS) significantly improves rendering quality and speed, its 3D editing process encounters difficulties with inefficient optimization, as pre-trained Gaussians retain excessive source information, hindering optimization.
-                <br> 
-                To address these limitations, we propose <strong> EditSplat </strong>, a novel 3D editing framework that integrates Multi-view Fusion Guidance (MFG) and Attention-Guided Trimming (AGT). Our MFG ensures multi-view consistency by incorporating essential multi-view information into the diffusion process, leveraging classifier-free guidance from the text-to-image diffusion model and the geometric properties of 3DGS. Additionally, our AGT leverages the explicit representation of 3DGS to selectively prune and optimize 3D Gaussians, enhancing optimization efficiency and enabling precise, semantically rich local edits. Through extensive qualitative and quantitative evaluations, EditSplat achieves superior multi-view consistency and editing quality over existing methods, significantly enhancing overall efficiency.
+                Recent advancements in 3D editing have highlighted the potential of text-driven methods in real-time, user-friendly AR/VR applications. However, current methods rely on 2D diffusion models without adequately considering multi-view information, resulting in multi-view inconsistency. While 3D Gaussian Splatting (3DGS) significantly improves rendering quality and speed, its 3D editing process encounters difficulties with inefficient optimization, as pre-trained Gaussians retain excessive source information, hindering optimization. To address these limitations, we propose <strong> EditSplat </strong>, a novel 3D editing framework that integrates Multi-view Fusion Guidance (MFG) and Attention-Guided Trimming (AGT). Our MFG ensures multi-view consistency by incorporating essential multi-view information into the diffusion process, leveraging classifier-free guidance from the text-to-image diffusion model and the geometric properties of 3DGS. Additionally, our AGT leverages the explicit representation of 3DGS to selectively prune and optimize 3D Gaussians, enhancing optimization efficiency and enabling precise, semantically rich local edits. Through extensive qualitative and quantitative evaluations, EditSplat achieves superior multi-view consistency and editing quality over existing methods, significantly enhancing overall efficiency.
             </div>
         </div>
     </div>
@@ -162,7 +160,7 @@
     <!-- Video -->
     <div class="columns is-centered has-text-centered" style="width: 100%; margin: 70px 0 0;">
         <div class="column" style="width: 100%; padding: 0;">
-            <h2 class="title is-3"> 360° Videos </h2> 
+            <h2 class="title is-3"> Rendered Video Results </h2> 
             <h2 class="subtitle has-text-centered" style="width: 100%; margin: 30px 0 0;">
               <span class="dnerf"><strong> EditSplat</span> </strong> . demonstrates its capability for flexible and high-quality 3D scene editing.
             </h2>
