@@ -1000,61 +1000,63 @@ figcaption {
       background-color: white; /* 선 색상 */
       transform: translateX(-50%);
       z-index: 3;
+      pointer-events: none; /* 클릭 이벤트 차단 */
     }
   </style>
 </head>
+
 <body>
+  
   <div id="custom-video-block">
-    <div class="columns is-centered">
-      <div class="column">
-        <div class="content">
-          <div class="col-md-8 col-md-offset-2">
-            <h3 class="title is-5" style="font-family: 'Kalam', cursive; text-align: center; font-size: 25px; margin-bottom: 10px;">
-              "Make the bonsai <span style="color: #0253c5;">snowy</span>"
-            </h3>
-            <div style="display: flex; justify-content: space-between; text-align: center; font-size: 20px; margin-bottom: 10px; padding: 5px;">
-              <span><strong>DGE</strong></span>
-              <span><strong>Ours</strong></span>
-            </div>
-            <!-- 비디오 비교 슬라이더 -->
-            <div id="video-compare-container">
-              <!-- 왼쪽 비디오 -->
-              <video id="left-video" loop autoplay onclick="video_click()">
-                <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
-              </video>
-              <!-- 오른쪽 비디오 -->
-              <div id="slider-bar">
-                <video id="right-video" loop autoplay onclick="video_click()">
-                  <source src="bonsai_snowy_DGE.mp4" type="video/mp4">
-                </video>
-              </div>
-              <!-- 중앙선 -->
-              <div id="slider-divider"></div>
-            </div>
-          </div>
+      <h3 class="title is-5" style="font-family: 'Kalam', cursive; text-align: center; font-size: 25px; margin-bottom: 10px;">
+        "Make the bonsai <span style="color: #0253c5;">snowy</span>"
+      </h3>
+      <div style="display: flex; justify-content: space-between; text-align: center; font-size: 20px; margin-bottom: 10px; padding: 5px;">
+        <span><strong>DGE</strong></span>
+        <span><strong>Ours</strong></span>
+      </div>
+      <!-- 비디오 비교 슬라이더 -->
+      <div id="video-compare-container">
+
+        <!-- 왼쪽 비디오 -->
+        <video id="left-video" loop autoplay onclick="video_click()">
+          <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
+        </video>
+        <!-- 오른쪽 비디오 -->
+        <div id="slider-bar">
+          <!-- 중앙선 -->
+         <div id="slider-divider"></div>
+          <video id="right-video" loop autoplay onclick="video_click()">
+            <source src="bonsai_snowy_DGE.mp4" type="video/mp4">
+          </video>
         </div>
+        
       </div>
     </div>
   </div>
+ 
 
   <script>
-     var v = document.getElementById("left-video");
+    var v = document.getElementById("left-video");
     var v2 = document.getElementById("right-video");
 
     function video_click() {
-      if (v.paused){
-       v.play();
-       v2.play(); 
-      }
-      else{
+      if (v.paused) {
+        v.play();
+        v2.play();
+      } else {
         v.pause();
         v2.pause();
       }
-      // v.paused ? v.play() : v.pause();
-      // v2.paused ? v2.play() : v2.pause();
-      v.currentTime=v2.currentTime;
-      v2.currentTime=v.currentTime;
     }
+
+    window.onload = function () {
+      sliderBar.style.clipPath = "inset(0 50% 0 0)"; // 초기 슬라이더 위치
+      sliderDivider.style.left = "50%";
+
+      // 비디오 동기화 초기화
+      v2.currentTime = v.currentTime;
+    };
 
     // 비디오 컨테이너 및 클리퍼 가져오기
     var videoContainer = document.getElementById("video-compare-container");
