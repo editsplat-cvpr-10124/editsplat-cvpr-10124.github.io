@@ -942,10 +942,18 @@ figcaption {
   <style>
     .custom-video-block {
       background-color: rgb(235, 235, 235);
-      padding: 30px;
-      width: 90%;
+      padding: 20px;
+      width: 55%;
       border-radius: 20px;
-      margin: 20px auto;
+      margin: 10px auto;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .custom-video-block-face {
+      background-color: rgb(235, 235, 235);
+      padding: 20px;
+      width: 40%;
+      border-radius: 20px;
+      margin: 10px auto;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     }
 
@@ -954,7 +962,7 @@ figcaption {
       line-height: 0;
       position: relative;
       width: 100%;
-      padding-top: 52.3%;
+      padding-top: 70%;
       border-radius: 10px;
       background: black;
       overflow: hidden;
@@ -1020,10 +1028,11 @@ figcaption {
   </style>
 </head>
 <body>
+  <div style="display: flex; justify-content: center; gap: 0px; flex-wrap: wrap;">
 
   <!-- 첫 번째 슬라이더 -->
   <div class="custom-video-block">
-    <h3 class="title" style="font-family: 'Kalam', cursive; text-align: center; font-size: 25px; margin-bottom: 8px;">
+    <h3 class="title" style="font-family: 'Kalam', cursive; text-align: center; font-size: 20px; margin-bottom: 8px;">
       "Make the bonsai <span style="color: #0253c5;">snowy</span>"
     </h3>
     <div style="display: flex; justify-content: space-between; text-align: center; font-size: 20px; margin-bottom: 10px; padding: 10px;">
@@ -1044,8 +1053,8 @@ figcaption {
   </div>
 
   <!-- 두 번째 슬라이더 -->
-  <div class="custom-video-block">
-    <h3 class="title" style="font-family: 'Kalam', cursive; text-align: center; font-size: 25px; margin-bottom: 8px;">
+  <div class="custom-video-block-face">
+    <h3 class="title" style="font-family: 'Kalam', cursive; text-align: center; font-size: 20px; margin-bottom: 8px;">
       <span>"Make him resemble that of a<span style="color: #0253c5;"> marble sculpture </span>"</span>
     </h3>
     <div style="display: flex; justify-content: space-between; text-align: center; font-size: 20px; margin-bottom: 10px; padding: 10px;">
@@ -1064,7 +1073,7 @@ figcaption {
       </div>
     </div>
   </div>
-
+</div>
   <script>
     // 모든 슬라이더에 대해 공통 동작 설정
     document.querySelectorAll('[data-slider]').forEach((slider) => {
