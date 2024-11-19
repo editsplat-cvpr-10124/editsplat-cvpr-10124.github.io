@@ -148,7 +148,7 @@
         <div class="column" style="width: 80%; padding: 0;">
             <h2 class="title is-3"> Abstract </h2>
             <div class="content has-text-justified">
-                Recent advancements in 3D editing have highlighted the potential of text-driven methods in real-time, user-friendly AR/VR applications. However, current methods rely on 2D diffusion models without adequately considering multi-view information, resulting in multi-view inconsistency. While 3D Gaussian Splatting (3DGS) significantly improves rendering quality and speed, its 3D editing process encounters difficulties with inefficient optimization, as pre-trained Gaussians retain excessive source information, hindering optimization. To address these limitations, we propose <strong> EditSplat </strong>, a novel 3D editing framework that integrates Multi-view Fusion Guidance (MFG) and Attention-Guided Trimming (AGT). Our MFG ensures multi-view consistency by incorporating essential multi-view information into the diffusion process, leveraging classifier-free guidance from the text-to-image diffusion model and the geometric properties of 3DGS. Additionally, our AGT leverages the explicit representation of 3DGS to selectively prune and optimize 3D Gaussians, enhancing optimization efficiency and enabling precise, semantically rich local edits. Through extensive qualitative and quantitative evaluations, EditSplat achieves superior multi-view consistency and editing quality over existing methods, significantly enhancing overall efficiency.
+                Recent advancements in 3D editing have highlighted the potential of text-driven methods in real-time, user-friendly AR/VR applications. However, current methods rely on 2D diffusion models without adequately considering multi-view information, resulting in multi-view inconsistency. While 3D Gaussian Splatting (3DGS) significantly improves rendering quality and speed, its 3D editing process encounters difficulties with inefficient optimization, as pre-trained Gaussians retain excessive source information, hindering optimization. To address these limitations, we propose <strong> EditSplat</strong>, a novel 3D editing framework that integrates Multi-view Fusion Guidance (MFG) and Attention-Guided Trimming (AGT). Our MFG ensures multi-view consistency by incorporating essential multi-view information into the diffusion process, leveraging classifier-free guidance from the text-to-image diffusion model and the geometric properties of 3DGS. Additionally, our AGT leverages the explicit representation of 3DGS to selectively prune and optimize 3D Gaussians, enhancing optimization efficiency and enabling precise, semantically rich local edits. Through extensive qualitative and quantitative evaluations, EditSplat achieves superior multi-view consistency and editing quality over existing methods, significantly enhancing overall efficiency.
             </div>
         </div>
     </div>
@@ -940,7 +940,7 @@ figcaption {
     .custom-video-block {
       background-color: rgb(235, 235, 235);
       padding: 20px;
-      width: 55%;
+      width: 60%;
       border-radius: 20px;
       margin: 10px auto;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -1134,6 +1134,247 @@ figcaption {
     </div>
   </div>
 </section>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scene Editing Results</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  .custom-video-block {
+    background-color: rgb(235, 235, 235);
+    padding: 20px;
+    width: 60%;
+    border-radius: 20px;
+    margin: 10px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .custom-video-block-face {
+    background-color: rgb(235, 235, 235);
+    padding: 20px;
+    width: 40%;
+    border-radius: 20px;
+    margin: 10px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .video-compare-container {
+    display: inline-block;
+    line-height: 0;
+    position: relative;
+    width: 100%;
+    padding-top: 70%;
+    border-radius: 10px;
+    background: black;
+    overflow: hidden;
+  }
+  /* 두 번째 슬라이더는 9:9 비율 */
+  .video-compare-container-face {
+    display: inline-block;
+    line-height: 0;
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 10px;
+    background: black;
+    overflow: hidden;
+  }
+  .video-compare-container > video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .video-compare-container-face video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+}
+  .slider-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: inset(0 50% 0 0);
+  }
+
+  .slider-bar video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slider-divider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background-color: white;
+    transform: translateX(-50%);
+    z-index: 3;
+    pointer-events: none;
+    }
+</style>
+</head>
+<body>
+  <!-- 지랄 시작 -->
+<div class="row justify-content-center">
+  <h2 class="section-header">Scene Editing Results</h2>
+</div>
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false">Face</a>
+    <a class="nav-item nav-link" id="nav-bonsai-tab active" data-toggle="tab" href="#nav-bonsai" role="tab" aria-controls="nav-bonsai" aria-selected="true">Bonsai</a>
+    <a class="nav-item nav-link" id="nav-bicycle-tab" data-toggle="tab" href="#nav-bicycle" role="tab" aria-controls="nav-bicycle" aria-selected="false">Bicycle</a>
+    <a class="nav-item nav-link" id="nav-person-tab" data-toggle="tab" href="#nav-person" role="tab" aria-controls="nav-person" aria-selected="false">Person</a>
+    <a class="nav-item nav-link" id="nav-garden-tab" data-toggle="tab" href="#nav-garden" role="tab" aria-controls="nav-garden" aria-selected="false">Garden</a>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+  <!-- Face Tab -->
+    <div class="container h-100 pt-3 pb-3">
+      <div class="custom-video-block">
+        <h3 class="title" style="font-family: 'Kalam', cursive; text-align: center; font-size: 20px; margin-bottom: 5px;">
+          "Make him look like resemble that of a <span style="color: #0253c5;">marble sculpture</span>"
+        </h3>
+        <div style="display: flex; justify-content: space-between; text-align: center; font-size: 20px; margin-bottom: 2px; padding: 5px;">
+          <span style="margin-left: 10px;"><strong>DGE</strong></span>
+          <span style="margin-right: 10px;"><strong>EditSplat (Ours)</strong></span>
+        </div>
+        <div class="video-compare-container" data-slider>
+          <video class="left-video" id="face-left-video" loop autoplay>
+            <source src="static/RENDERING_RESULTS/face_marble.mp4" type="video/mp4">
+          </video>
+          <div class="slider-bar">
+            <div class="slider-divider"></div>
+            <video class="right-video" id="face-right-video" loop autoplay>
+              <source src="face_marble_DGE.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Bonsai Tab -->
+  <div class="tab-pane fade show active" id="nav-bonsai" role="tabpanel" aria-labelledby="nav-bonsai-tab">
+    <div class="container h-100 pt-3 pb-3">
+      <div class="custom-video-block">
+        <h3 class="title" style="font-family: 'Kalam', cursive; text-align: center; font-size: 20px; margin-bottom: 5px;">
+          "Make the bonsai <span style="color: #0253c5;">snowy</span>"
+        </h3>
+        <div style="display: flex; justify-content: space-between; text-align: center; font-size: 20px; margin-bottom: 2px; padding: 5px;">
+          <span style="margin-left: 10px;"><strong>DGE</strong></span>
+          <span style="margin-right: 10px;"><strong>EditSplat (Ours)</strong></span>
+        </div>
+        <div class="video-compare-container" data-slider>
+          <video class="left-video" id="bonsai-left-video" loop autoplay>
+            <source src="static/RENDERING_RESULTS/bonsai_snowy.mp4" type="video/mp4">
+          </video>
+          <div class="slider-bar">
+            <div class="slider-divider"></div>
+            <video class="right-video" id="bonsai-right-video" loop autoplay>
+              <source src="bonsai_snowy_DGE.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bicycle Tab -->
+  <div class="tab-pane fade" id="nav-bicycle" role="tabpanel" aria-labelledby="nav-bicycle-tab">
+    <p>Bicycle content here.</p>
+  </div>
+
+  <!-- Person Tab -->
+  <div class="tab-pane fade" id="nav-person" role="tabpanel" aria-labelledby="nav-person-tab">
+    <p>Person content here.</p>
+  </div>
+
+  <!-- Garden Tab -->
+  <div class="tab-pane fade" id="nav-garden" role="tabpanel" aria-labelledby="nav-garden-tab">
+    <p>Garden content here.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  
+  function updateSlider(tab, left, right) {
+    const leftVideo = document.getElementById(`${tab}-left-video`);
+    const rightVideo = document.getElementById(`${tab}-right-video`);
+    leftVideo.querySelector('source').src = `${tab}_${left}.mp4`;
+    rightVideo.querySelector('source').src = `${tab}_${right}.mp4`;
+    leftVideo.load();
+    rightVideo.load();
+  }
+
+  // 모든 슬라이더에 대해 공통 동작 설정
+  document.querySelectorAll('[data-slider]').forEach((slider) => {
+      const leftVideo = slider.querySelector('.left-video');
+      const rightVideo = slider.querySelector('.right-video');
+      const sliderBar = slider.querySelector('.slider-bar');
+      const sliderDivider = slider.querySelector('.slider-divider');
+
+      // 슬라이더 동작 처리
+      slider.addEventListener('mousemove', (e) => handleSliderMove(e, slider, sliderBar, sliderDivider));
+      slider.addEventListener('touchmove', (e) => handleSliderMove(e, slider, sliderBar, sliderDivider));
+
+      // 비디오 재생/정지 동작
+      slider.addEventListener('click', () => {
+        if (leftVideo.paused) {
+          leftVideo.play();
+          rightVideo.play();
+        } else {
+          leftVideo.pause();
+          rightVideo.pause();
+        }
+      });
+    });
+
+    // 슬라이더 위치 조정 함수
+    function handleSliderMove(event, slider, sliderBar, sliderDivider) {
+      const rect = slider.getBoundingClientRect();
+      const xPos = event.type.startsWith('touch') ? event.touches[0].clientX : event.clientX;
+      const position = ((xPos - rect.left) / slider.offsetWidth) * 100;
+
+      if (position >= 0 && position <= 100) {
+        sliderBar.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+        sliderDivider.style.left = `${position}%`;
+      }
+    }
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
 
 
 <br><br>
