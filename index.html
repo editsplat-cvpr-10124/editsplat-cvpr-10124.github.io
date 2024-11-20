@@ -8,8 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> EditSplat: Multi-View Fusion and Attention-Guided Optimization for View-Consistent 3D Scene Editing with 3D Gaussian Splatting</title>
 
-  </script>
-
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
@@ -168,108 +166,20 @@
 
 
 <!-- Videos Section -->
-<style>
-.container {
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.video-row {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 3px;
-}
-
-.left-video-wrapper {
-  flex: 0 1 calc(33.33% - 0px);
-  max-width: calc(33.33% - 0px);
-  border-right: 3px dotted #5a5a5a; 
-  padding-right: 5px; 
-  margin-right: 3px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.left-video-wrapper2 {
-  flex: 0 1 calc(25% - 0px);
-  max-width: calc(25% - 0px);
-  border-right: 3px dotted #5a5a5a; 
-  padding-right: 15px; 
-  margin-right: 3px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
- /* fangzhou, person */
- .left-video-wrapper3 {
-  flex: 0 1 calc(18% - 10px);
-  max-width: calc(18% - 10px);
-  border-right: 3px dotted #5a5a5a;
-  padding-right: 50px; /* 경계선 간격 */
-  margin-left: 50px;
-  box-sizing: content-box; /* 크기 조정 문제 방지 */
-}
-
-
-
-.video-wrapper {
-  flex: 0 1 calc(33.33% - 1px);
-  max-width: calc(33.33% - 1px);
-  text-align: center;
-}
-
-.video-wrapper video {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* 정사각형 비디오 행 간격 */
-.video-row-square {
-  justify-content: space-between; /* 비디오 간 간격 균등 배치 */
-}
-
-.video-row-portrait {
-  justify-content: space-between; /* 비디오 간 간격 균등 분배 */
-}
-
-/* 정사각형 비디오 */
-.video-row-square .video-wrapper {
-  aspect-ratio: 1; /* 정사각형 */
-  flex: 0 1 calc(25% - 20px); /* 너비를 간격에 맞게 설정 */
-  max-width: calc(25% - 20px);
-  margin: 0 10px;
-
-}
-
-/* 세로 비디오 */
-.video-row-portrait .video-wrapper {
-  aspect-ratio: 4/ 5; /* 세로 비율 */
-
-  flex: 0 1 calc(18% - 10px); /* 세로형 너비 */
-  max-width: calc(18% - 10px);
-  margin: 0 50px;
-
-}
-
-figcaption {
-  margin-top: 5px;
-  font-size: 1em;
-  color: #555;
-  font-style: italic;
-  text-align: center;
-}
-
-</style>
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Sync</title>
+  <link rel="stylesheet" href="static/css/video_styles.css">
+</head>
+<body>
 <section class="hero teaser" style="background-color: #cecece6c; padding: 15px; border-radius: 8px;">
   <div class="container is-max-desktop">
     <div class="video-row">
       <!-- 왼쪽 비디오 -->
       <figure class="left-video-wrapper">
         <video id="teaser0" class="sync-video" autoplay muted loop playsinline>
-          <source src="././static/SOURCE/bear.mp4" type="video/mp4">
+          <source src="/workspaces/editsplat-cvpr.github.io/static/SOURCE/bear.mp4"" type="video/mp4">
         </video>
         <figcaption style="font-family: 'Kalam', cursive; margin-top: 1px;">
           <strong> Source </strong>
@@ -307,42 +217,7 @@ figcaption {
     </figure>
 
 </section>
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
-
-  // 비디오 싱크 맞추기 함수
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.1) {
-        video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오 로드 후 싱크 및 재생 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve); // 로드 완료 이벤트
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play(); // 모든 비디오 재생
-      video.playbackRate = 1.0; // 재생 속도 동일하게 설정
-      video.addEventListener('play', () => videos.forEach(v => v.play())); // 동시 재생
-      video.addEventListener('pause', () => videos.forEach(v => v.pause())); // 동시 일시정지
-      video.addEventListener('timeupdate', syncVideos); // 시간 동기화
-    });
-  });
-</script>
+<script src="static/js/sync-videos.js"></script>
 
 <br>
 <section class="hero teaser" style="background-color: #cecece6c; padding: 15px; border-radius: 8px;">
@@ -392,43 +267,8 @@ figcaption {
     </div>
   </div>
 </section>
+<script src="static/js/sync-videos.js"></script>
 
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
-
-  // 비디오 싱크 맞추기 함수
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.1) {
-        video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오 로드 후 싱크 및 재생 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve); // 로드 완료 이벤트
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play(); // 모든 비디오 재생
-      video.playbackRate = 1.0; // 재생 속도 동일하게 설정
-      video.addEventListener('play', () => videos.forEach(v => v.play())); // 동시 재생
-      video.addEventListener('pause', () => videos.forEach(v => v.pause())); // 동시 일시정지
-      video.addEventListener('timeupdate', syncVideos); // 시간 동기화
-    });
-  });
-</script>
 
 <br>
 <section class="hero teaser" style="background-color: #cecece6c; padding: 15px; border-radius: 8px;">
@@ -478,6 +318,7 @@ figcaption {
     </div>
   </div>
 </section>
+<script src="static/js/sync-videos.js"></script>
 
 <br>
 <section class="hero teaser" style="background-color: #cecece6c; padding: 15px; border-radius: 8px;">
@@ -520,43 +361,8 @@ figcaption {
     </div>
   </div>
 </section>
+<script src="static/js/sync-videos.js"></script>
 
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
-
-  // 비디오 싱크 맞추기 함수
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.1) {
-        video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오 로드 후 싱크 및 재생 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve); // 로드 완료 이벤트
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play(); // 모든 비디오 재생
-      video.playbackRate = 1.0; // 재생 속도 동일하게 설정
-      video.addEventListener('play', () => videos.forEach(v => v.play())); // 동시 재생
-      video.addEventListener('pause', () => videos.forEach(v => v.pause())); // 동시 일시정지
-      video.addEventListener('timeupdate', syncVideos); // 시간 동기화
-    });
-  });
-</script>
 <br>
 
 <section class="hero teaser" style="background-color: #cecece6c; padding: 15px; border-radius: 8px;">
@@ -597,44 +403,7 @@ figcaption {
     </div>
   </div>
 </section>
-
-
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
-
-  // 비디오 싱크 맞추기 함수
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.1) {
-        video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오 로드 후 싱크 및 재생 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve); // 로드 완료 이벤트
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play(); // 모든 비디오 재생
-      video.playbackRate = 1.0; // 재생 속도 동일하게 설정
-      video.addEventListener('play', () => videos.forEach(v => v.play())); // 동시 재생
-      video.addEventListener('pause', () => videos.forEach(v => v.pause())); // 동시 일시정지
-      video.addEventListener('timeupdate', syncVideos); // 시간 동기화
-    });
-  });
-</script>
+<script src="static/js/sync-videos.js"></script>
 
 
 <br>
@@ -681,45 +450,9 @@ figcaption {
           <strong> "Make the scene appear as though it's <span style='color: #0253c5;'>underwater</span>" </strong>
       </figcaption>
     </figure>
-
-
 </section>
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
+<script src="static/js/sync-videos.js"></script>
 
-  // 비디오 싱크 맞추기 함수
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.1) {
-        video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오 로드 후 싱크 및 재생 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve); // 로드 완료 이벤트
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play(); // 모든 비디오 재생
-      video.playbackRate = 1.0; // 재생 속도 동일하게 설정
-      video.addEventListener('play', () => videos.forEach(v => v.play())); // 동시 재생
-      video.addEventListener('pause', () => videos.forEach(v => v.pause())); // 동시 일시정지
-      video.addEventListener('timeupdate', syncVideos); // 시간 동기화
-    });
-  });
-</script>
 <br>
 <section class="hero teaser" style="background-color: #cecece6c; padding: 15px; border-radius: 8px;">
   <div class="container is-max-desktop">
@@ -766,43 +499,8 @@ figcaption {
     </div>
   </div>
 </section>
+<script src="static/js/sync-videos.js"></script>
 
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
-
-  // 비디오 싱크 맞추기 함수
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.1) {
-        video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오 로드 후 싱크 및 재생 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve); // 로드 완료 이벤트
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play(); // 모든 비디오 재생
-      video.playbackRate = 1.0; // 재생 속도 동일하게 설정
-      video.addEventListener('play', () => videos.forEach(v => v.play())); // 동시 재생
-      video.addEventListener('pause', () => videos.forEach(v => v.pause())); // 동시 일시정지
-      video.addEventListener('timeupdate', syncVideos); // 시간 동기화
-    });
-  });
-</script>
 <br>
 <section class="hero teaser" style="background-color: #cecece6c; padding: 15px; border-radius: 8px;">
   <div class="container is-max-desktop">
@@ -846,63 +544,24 @@ figcaption {
           <strong> "Make the stone horse appear as a  <span style='color: #0253c5;'>metallic robot horse</span>" </strong>
       </figcaption>
     </figure>
-
-
 </section>
+<script src="static/js/sync-videos.js"></script>
 
-<script>
-  const videos = document.querySelectorAll('.sync-video');
-  let isSyncing = false;
-
-  // 비디오 싱크 맞추기 함수
-  function syncVideos() {
-    if (isSyncing) return;
-    isSyncing = true;
-
-    const masterTime = videos[0].currentTime; // 첫 번째 비디오 기준
-    videos.forEach(video => {
-      if (Math.abs(video.currentTime - masterTime) > 0.1) {
-        video.currentTime = masterTime; // 시간 차이가 0.05초 이상이면 싱크 맞추기
-      }
-    });
-
-    isSyncing = false;
-  }
-
-  // 모든 비디오 로드 후 싱크 및 재생 시작
-  Promise.all(
-    Array.from(videos).map(video =>
-      new Promise(resolve => {
-        video.addEventListener('loadeddata', resolve); // 로드 완료 이벤트
-      })
-    )
-  ).then(() => {
-    videos.forEach(video => {
-      video.play(); // 모든 비디오 재생
-      video.playbackRate = 1.0; // 재생 속도 동일하게 설정
-      video.addEventListener('play', () => videos.forEach(v => v.play())); // 동시 재생
-      video.addEventListener('pause', () => videos.forEach(v => v.pause())); // 동시 일시정지
-      video.addEventListener('timeupdate', syncVideos); // 시간 동기화
-    });
-  });
-</script>
 
 <br><br> <br>
 
-<body>
   <h2 class="subtitle" style="font-family: 'Kalam', cursive; font-size: 1.4em;">
     Sync settings are enabled, so videos might not play immediately 😔 <br>
     Please refresh the page! Thank you for your patience 😊
   </h2>
-</body>
 
 
 <br><br> <br><br>
-</section>
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-    <!-- Abstract. -->
+    <!-- Comparison -->
     <div class="columns is-centered has-text-centered" style="width: 100%; margin: 15px 10px 0;">
         <div class="column" style="width: 100%; padding: 0;">
             <h2 class="title is-3"> Qualitative comparison </h2>
@@ -924,15 +583,11 @@ figcaption {
 
 <br><br><br><br>
 
-<body>
+
   <h2 class="subtitle" style="font-family: 'Kalam', cursive; text-align: center; font-size: 1.5em;">
     📷 <strong> Click </strong> on video to play or pause. <strong> Move</strong> mouse to change the hover  📷
   </h2>
-</body>
 
-
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -943,125 +598,9 @@ figcaption {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparison Slider</title>
-    <style>
-      .custom-video-block {
-      background-color: rgb(235, 235, 235);
-      padding: 20px;
-      max-width: 800px; /* 최대 너비를 설정 */
-      width: 100%; /* 부모 요소의 너비에 맞춤 */
-      border-radius: 20px;
-      margin: 10px auto;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    }
-      .custom-video-block-face {
-        background-color: rgb(235, 235, 235);
-        padding: 20px;
-        width: 40%;
-        border-radius: 20px;
-        margin: 10px auto;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-      }
 
-      .custom-video-block-person {
-        background-color: rgb(235, 235, 235);
-        padding: 20px;
-        width: 30%;
-        border-radius: 20px;
-        margin: 10px auto;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-      }
-  
-      .video-compare-container {
-        display: inline-block;
-        line-height: 0;
-        position: relative;
-        width: 100%;
-        padding-top: 70%;
-        border-radius: 10px;
-        background: black;
-        overflow: hidden;
-      }
-      /* 두 번째 슬라이더는 9:9 비율 */
-      .video-compare-container-face {
-        display: inline-block;
-        line-height: 0;
-        position: relative;
-        width: 100%;
-        padding-top: 100%;
-        border-radius: 10px;
-        background: black;
-        overflow: hidden;
-      }
-
-      .video-compare-container-person {
-        display: inline-block;
-        line-height: 0;
-        position: relative;
-        width: 100%;
-        padding-top: 177.78%; /* 9:16 비율 */
-        border-radius: 10px;
-        background: black;
-        overflow: hidden;
-      }
-      .video-compare-container > video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .video-compare-container-face video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-     }
-
-     .video-compare-container-person > video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-      .slider-bar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        clip-path: inset(0 50% 0 0);
-      }
-  
-      .slider-bar video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-  
-      .slider-divider {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 3px;
-        height: 100%;
-        background-color: white;
-        transform: translateX(-50%);
-        z-index: 3;
-        pointer-events: none;
-        }
-      
-    </style>
-
+    <link rel="stylesheet" href="static/css/slidebar-container.css">
 </head>
-<body>
 
   <!-- Tabs -->
   <nav>
@@ -1213,42 +752,7 @@ figcaption {
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Custom Slider Logic -->
-<script>
-  // 모든 슬라이더에 대해 공통 동작 설정
-  document.querySelectorAll('[data-slider]').forEach((slider) => {
-    const leftVideo = slider.querySelector('.left-video');
-    const rightVideo = slider.querySelector('.right-video');
-    const sliderBar = slider.querySelector('.slider-bar');
-    const sliderDivider = slider.querySelector('.slider-divider');
-
-    // 슬라이더 동작 처리
-    slider.addEventListener('mousemove', (e) => handleSliderMove(e, slider, sliderBar, sliderDivider));
-    slider.addEventListener('touchmove', (e) => handleSliderMove(e, slider, sliderBar, sliderDivider));
-
-    // 비디오 재생/정지 동작
-    slider.addEventListener('click', () => {
-      if (leftVideo.paused) {
-        leftVideo.play();
-        rightVideo.play();
-      } else {
-        leftVideo.pause();
-        rightVideo.pause();
-      }
-    });
-  });
-
-  // 슬라이더 위치 조정 함수
-  function handleSliderMove(event, slider, sliderBar, sliderDivider) {
-    const rect = slider.getBoundingClientRect();
-    const xPos = event.type.startsWith('touch') ? event.touches[0].clientX : event.clientX;
-    const position = ((xPos - rect.left) / slider.offsetWidth) * 100;
-
-    if (position >= 0 && position <= 100) {
-      sliderBar.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
-      sliderDivider.style.left = `${position}%`;
-    }
-  }
-</script>
+<script src="static/js/slidebar-container.js"></script>
 
 </body>
 </html>
@@ -1309,5 +813,5 @@ figcaption {
     </div>
   </div>
 </footer>
-</body>
+
 </html>
