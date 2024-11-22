@@ -1,6 +1,6 @@
 # EditSplat README
 
-## EditSPlat_projectpage_10124.html
+## 1. EditSplat_projectpage_10124.html
 
 This is our **locally hosted HTML project page**, designed to showcase the core features and results of our work. Open it in your browser to explore detailed visualizations, interactive examples, and additional resources.
 
@@ -10,8 +10,9 @@ To view the project page:
 
 Enjoy an immersive experience of our research and its practical applications!
 
+<br><br>
 
-## Rendering Results
+## 2. Rendering Results
 The `EditSplat_RENDERING_RESULTS` folder contains:
 
 - **RENDERING_RESULTS**: Videos generated using our model, showcasing high-quality results with multi-view consistency.
